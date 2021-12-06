@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubix-Fashion</title>
+    <!-- FONT  -->
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- ICON BS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- RESET CSS  -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- LIST PRODUCT CSS -->
+    <link rel="stylesheet" href="./css/listProduct.css">
+    <!-- PRODUCTS CSS -->
+    <link rel="stylesheet" href="./css/products.css">
+</head>
+
+<body>
+    <div class="CategoryPage">
+        <div class="container">
+            <h3 class="CategoryPage__title">
+                Product Categories
+            </h3>
+            <div class="row CategoryPage__main">
+                <div class="CategoryPage__left col-3">
+                    <div class="Sidebar__main">
+                        <div class="Sidebar__totalProduct">
+                            <span><b>1 - 12</b></span> trên 19 sản phẩm
+                        </div>
+                        <div class="Sidebar__list">
+                            <h3 class="heading">Fashion</h3>
+                            <ul class="Sidebar__listOption">
+                                <li class="Sidebar__itemOption">
+                                    <input type="radio" name="checkproduct" value="All" id="input0" checked>
+                                    <label for="input0"> All</label>
+                                </li>
+                                <li class="Sidebar__itemOption">
+                                    <input type="radio" name="checkproduct" value="Accessories" id="input1">
+                                    <label for="input1"> Accessories</label>
+                                </li>
+                                <li class="Sidebar__itemOption">
+                                    <input type="radio" name="checkproduct" value="Backpack" id="input2">
+                                    <label for="input2"> Backpack</label>
+                                </li>
+                                <li class="Sidebar__itemOption">
+                                    <input type="radio" name="checkproduct" value="Mens" id="input3">
+                                    <label for="input3"> Mens</label>
+                                </li>
+                                <li class="Sidebar__itemOption">
+                                    <input type="radio" name="checkproduct" value="Shoes" id="input4">
+                                    <label for="input4"> Shoes</label>
+                                </li>
+                                <li class="Sidebar__itemOption">
+                                    <input type="radio" name="checkproduct" value="Womens" id="input5">
+                                    <label for="input5"> Womens</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="Sidebar__price-range">
+                        <h3 class="heading">
+                            Price
+                        </h3>
+                        <div class="multi-range-slider">
+                            <!-- <input type="range" id="input-left" min="0" max="100" value="25"> -->
+
+                            <input type="range" max="100" value="25" class="slider">
+
+
+                            <p class="mini-price">
+                                price :
+                                <span class="min">$0</span> -
+                                <span class="max">$200</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Sidebar__featured-products">
+                        <h3 class="heading">
+                            Featured Products
+                        </h3>
+                        <ul class="Sidebar__list-featured">
+                            <li class="Sidebar__list-item">
+                                <div class="Sidebar__list-img">
+                                    <img src="./img/product/20_1-copy-600x745.jpg" alt="img1">
+                                </div>
+                                <div class="Sidebar__list-content">
+                                    <a href="#">
+                                        Women's Classic Glasses
+                                    </a>
+                                    <div class="price">
+                                        $80.00
+                                    </div>
+                                    <div class="rate">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="Sidebar__list-item">
+                                <div class="Sidebar__list-img">
+                                    <img src="./img/product/2_1-copy-600x745.jpg" alt="img2">
+                                </div>
+                                <div class="Sidebar__list-content">
+                                    <a href="#">
+                                        Women Blue Coat
+                                    </a>
+                                    <div class="price">
+                                        $39.00
+                                    </div>
+                                    <div class="rate">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="Sidebar__list-item">
+                                <div class="Sidebar__list-img">
+                                    <img src="./img/product/7_1-copy-600x745.jpg" alt="img3">
+                                </div>
+                                <div class="Sidebar__list-content">
+                                    <a href="#">
+                                        Mogens Koch Bookca
+                                    </a>
+                                    <div class="price">
+                                        $28.00
+                                    </div>
+                                    <div class="rate">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="CategoryPage__right col-9">
+                    <div class="row">
+                        <div class="col-6 SortCategory__filter-left">
+                            <div class="SortCategory__filterTitle">
+                                Sắp xếp theo:
+                            </div>
+                            <div name="" class="SortCategory__filterList">
+                                <div class="SortCategory__filterItem" id="high">
+                                    Giá tăng dần
+                                </div>
+                                <div class=" SortCategory__filterItem" id="low">
+                                    Giá giảm dần
+                                </div>
+                            </div>
+                            <!-- <select name="" id="filterList">
+                                <option value="all">Defaul Sorting</option>
+                                <option value="low">Sort by price: low to high</option>
+                                <option value="high">Sort by price: high to low</option>
+                            </select> -->
+                        </div>
+                        <div class="col-6 SortCategory__filter-right">
+                            Views:
+                        </div>
+                    </div>
+                    <div class="ListProductCategory__product row listProduct" id="listProductCategory">
+
+                    </div>
+
+                    <div class="group-btn-products">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BS5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- OWL JS -->
+    <script src="./js/owlcarousel.js"></script>
+    <!-- MAIN JS -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

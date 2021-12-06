@@ -35,8 +35,7 @@ var products = [
     img: "./img/product/20-copy-600x745.jpg",
     img1: "./img/product/20_1-copy-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: true,
+    isBest: true,
     type: "Accessories",
   },
   {
@@ -46,8 +45,7 @@ var products = [
     img: "./img/product/3_1-600x745.jpg",
     img1: "./img/product/2_4-copy-600x745.jpg",
     isSale: true,
-    priceSale: "$65.00",
-    isbest: false,
+    isBest: false,
     type: "Womens",
   },
   {
@@ -57,8 +55,7 @@ var products = [
     img: "./img/product/10_1-copy-600x745.jpg",
     img1: "./img/product/10_2-copy-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: false,
+    isBest: false,
     type: "Mens",
   },
   {
@@ -68,8 +65,7 @@ var products = [
     img: "./img/product/9-copy-600x745.jpg",
     img1: "./img/product/9_2-copy-1-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: false,
+    isBest: false,
     type: "Womens",
   },
   {
@@ -79,8 +75,7 @@ var products = [
     img: "./img/product/1_1-600x745.jpg",
     img1: "./img/product/2_4-copy-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: false,
+  isBest: false,
     type: "Mens",
   },
   {
@@ -90,8 +85,7 @@ var products = [
     img: "./img/product/8_1-copy-600x745.jpg",
     img1: "./img/product/8_2-copy-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: true,
+    isBest: true,
     type: "Womens",
   },
   {
@@ -101,8 +95,7 @@ var products = [
     img: "./img/product/17_1-copy-600x745.jpg",
     img1: "./img/product/17-copy-600x745.jpg",
     isSale: true,
-    priceSale: "$220.00",
-    isbest: false,
+    isBest: false,
     type: "Backpack",
   },
   {
@@ -112,8 +105,7 @@ var products = [
     img: "./img/product/11_1-copy-600x745.jpg",
     img1: "",
     isSale: false,
-    priceSale: "$",
-    isbest: false,
+     isBest: false,
     type: "Backpack",
   },
   {
@@ -123,8 +115,7 @@ var products = [
     img: "./img/product/19_1-copy-600x745.jpg",
     img1: "./img/product/19_2-copy-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: true,
+    isBest: true,
     type: "Backpack",
   },
   {
@@ -134,8 +125,7 @@ var products = [
     img: "./img/product/12-copy-600x745.jpg",
     img1: "./img/product/12_2-copy-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: true,
+    isBest: true,
     type: "Mens",
   },
   {
@@ -145,8 +135,7 @@ var products = [
     img: "./img/product/22_1-copy-600x745.jpg",
     img1: "./img/product/21-copy-600x745.jpg",
     isSale: false,
-    priceSale: "$",
-    isbest: true,
+    isBest: true,
     type: "Shoes",
   },
   {
@@ -156,8 +145,7 @@ var products = [
     img: "./img/product/7_1-copy-600x745.jpg",
     img1: "./img/product/7-copy-600x745.jpg",
     isSale: false,
-    priceSale: "",
-    isbest: true,
+    isBest: true,
     type: "Accessories",
   },
   {
@@ -167,8 +155,7 @@ var products = [
     img: "./img/product/2_1-copy-600x745.jpg",
     img1: "./img/product/2_3-copy-600x745.jpg",
     isSale: true,
-    priceSale: "$",
-    isbest: true,
+    isBest: true,
     type: "Womens",
   },
   {
@@ -178,13 +165,12 @@ var products = [
     img: "./img/product/6_1-copy-600x745.jpg",
     img1: "",
     isSale: false,
-    priceSale: "$",
-    isbest: true,
+    isBest: true,
     type: "Womens",
   },
 ];
 
-const bestSale = products.filter((item) => item.isbest);
+const bestSale = products.filter((item) => item.isBest);
 
 function renderOwl(data, owl) {
   data.map((item, index) => {
@@ -192,16 +178,22 @@ function renderOwl(data, owl) {
       owl
         .trigger("add.owl.carousel", [
           `
-                <div class="trending-product__item">
+                <div class="item">
                     <div class="product" data-id = ${item.id} >
                         <div class="img">
                             <a href="#">
-                                <img src="${item.img}" alt=${item.name}>
-                                <img src="${item.img1}" alt=${item.name}>
+                                <img src="${item.img}"  alt="">
+                                <img src="${item.img1}"  alt="">
                             </a>
-                              <button class="btn d-flex trending-product__cart" >
+                              <button class="btn d-flex addCartItem" >
                                 <i class="bi bi-handbag"></i> Add To Card
                             </button>
+                            <ul class="action action1">
+                                <li class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
+                                </li>
+                                <li class="compare"><i class="fas fa-sliders-h"></i><span>Compare</span> </li>
+                                <li class="detail"><i class="fas fa-eye"></i><span>View Details</span></li>
+                            </ul>
                         </div>
                         <div class="content">
                             <h4>${item.name}</h4>
@@ -214,16 +206,18 @@ function renderOwl(data, owl) {
                       <div class="product" data-id = ${data[index + 1].id} >
                         <div class="img">
                             <a href="#">
-                                <img src="${data[index + 1].img}" alt=${
-            item.name
-          }>
-                                <img src="${data[index + 1].img1}" alt=${
-            item.name
-          }>
+                                <img src="${data[index + 1].img}" alt="">
+                                <img src="${data[index + 1].img1}"  alt="">
                             </a>
-                              <button class="btn d-flex trending-product__cart" >
+                              <button class="btn d-flex addCartItem" >
                                 <i class="bi bi-handbag"></i> Add To Card
                             </button>
+                               <ul class="action action1">
+                                <li class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
+                                </li>
+                                <li class="compare"><i class="fas fa-sliders-h"></i><span>Compare</span> </li>
+                                <li class="detail"><i class="fas fa-eye"></i><span>View Details</span></li>
+                            </ul>
                         </div>
 
                         <div class="content">
