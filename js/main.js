@@ -22,12 +22,12 @@ $(document).ready(function () {
   });
 
   // filter sort
-  $("#high").on("click", function () {
+  $("#low").on("click", function () {
     const data = products.sort((a, b) => +a.price - +b.price);
     renderProductCate(data.reverse());
   });
 
-  $("#low").on("click", function () {
+  $("#high").on("click", function () {
     const data = products.sort((a, b) => +a.price - +b.price);
     renderProductCate(data);
   });
@@ -42,11 +42,15 @@ $(document).ready(function () {
     }
   );
 
-
   // function render to view
   function renderProductCate(data) {
+    const current = +$(".group-btn-products ul li a.active").html();
+    console.log("current", current);
+    var start = (current - 1) * viewAmount;
+    var end = start + viewAmount;
+
     $("#listProductCategory").empty();
-    const products = data.map(
+    const products = data.slice(start, end).map(
       (item) => `
             <div class="col-sm-6 col-lg-4 col-xl-4 item">
                 <div class="product" data-id=${item.id}>
@@ -97,4 +101,24 @@ $(document).ready(function () {
             <ul>${html}</ul>
         `);
   }
+
+  // when you click on btn pagination
+  $(document).on("click", ".group-btn-products ul li a", function (e) {
+    e.preventDefault();
+    const current = $(".group-btn-products ul li a.active");
+    const ele = $(this);
+
+    if (ele) {
+      current.removeClass("active");
+      ele.addClass("active");
+      renderProductCate(products);
+    }
+
+    $("html,body").animate(
+      {
+        scrollTop: 0,
+      },
+      0
+    );
+  });
 });
