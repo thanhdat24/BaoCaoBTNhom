@@ -53,6 +53,20 @@
   font-size: 14px;
 }
 
+/* TRANDING PRODUCT */
+.trending-product .trending-product__title {
+  text-align: center;
+}
+.trending-product__title h3 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.trending-product__title p {
+  font-size: 16px;
+}
+.trending-product__list {
+  margin-top: 50px;
+}
 /* BANNER */
 
 section.banner {

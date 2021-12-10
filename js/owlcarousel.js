@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // This is slider list products
-  $(".listproduct").owlCarousel({
+  $(".listProduct").owlCarousel({
     margin: 20,
     nav: false,
     dots: false,
@@ -75,7 +75,7 @@ var products = [
     img: "./img/product/1_1-600x745.jpg",
     img1: "./img/product/2_4-copy-600x745.jpg",
     isSale: false,
-  isBest: false,
+    isBest: false,
     type: "Mens",
   },
   {
@@ -105,7 +105,7 @@ var products = [
     img: "./img/product/11_1-copy-600x745.jpg",
     img1: "",
     isSale: false,
-     isBest: false,
+    isBest: false,
     type: "Backpack",
   },
   {
