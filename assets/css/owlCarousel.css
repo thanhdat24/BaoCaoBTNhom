@@ -1,0 +1,71 @@
+/* File: owlCarousel.css
+@Author: datb1910205@student.ctu.edu.vn
+@Created date: 12/13/2021  */
+
+/* owl-carousel */
+.slider .owl-carousel .owl-nav {
+  position: absolute;
+  transition: all 0.4s;
+  top: 50%;
+  transform: translateY(-100%);
+  color: #fff;
+  align-items: center;
+  display: flex;
+  opacity: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+.slider .owl-carousel:hover .owl-nav {
+  opacity: 1;
+}
+.slider .owl-carousel .owl-nav button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: none;
+  position: absolute;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.slider .owl-carousel .owl-nav button.owl-prev {
+  left: 20px;
+}
+.slider .owl-carousel .owl-nav button.owl-next {
+  right: 20px;
+  left: auto;
+}
+
+.slider .owl-carousel .owl-nav button.owl-prev,
+.slider .owl-carousel .owl-nav button.owl-next {
+  background: rgba(#fff, 0.8);
+  color: #1a1a1a;
+}
+.slider .owl-carousel .owl-nav button.owl-prev:hover,
+.slider .owl-carousel .owl-nav button.owl-next:hover {
+  color: #fff;
+  background: #ba933e;
+}
+.owl-dots {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.slider .owl-carousel .owl-dots .owl-dot span {
+  background: #ba933e;
+  width: 12px;
+  height: 12px;
+}
+
+.slider .owl-carousel .owl-dots .owl-dot.active span {
+  box-sizing: content-box;
+  background: none;
+  border: 2px solid #ba933e;
+}

@@ -1,0 +1,268 @@
+/* Nguyễn Tuấn Cảnh B1906632 */
+/* css index */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* start top-bar */
+
+.top-bar {
+  height: 60px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.top-bar__first,
+.top-bar__second,
+.top-bar__third {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar__second li:nth-child(2) {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #ba933e;
+  color: #fff;
+  font-weight: 700;
+  padding: 3px 8px;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.top-bar__first li,
+.top-bar__second li {
+  padding: 0 15px;
+  list-style: none;
+}
+
+.top-bar__third a {
+  padding: 0 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+.top-bar__third a:hover {
+  color: darkgoldenrod;
+}
+
+.top-bar__third__logo {
+  padding: 0 15px;
+}
+
+.top-bar__third__logo i {
+  padding: 0 10px;
+}
+
+/* end top-bar */
+
+/* start top-nav */
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 50px;
+  margin: 18px auto;
+  width: 97%;
+  text-align: center;
+  align-items: center;
+}
+
+.top-nav__first li {
+  display: inline-block;
+}
+
+.top-nav__first li a {
+  color: #000;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.tn-Blog,
+.top-nav__first__Page {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.top-nav__first .menu-Blog li a,
+.top-nav__first .menu-Page li a {
+  line-height: 50px;
+}
+
+.menu-Blog,
+.menu-Page {
+  display: none;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+}
+
+.menu-Blog li,
+.menu-Page li {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+.top-nav__first__Blog:hover .menu-Blog,
+.top-nav__first__Page:hover .menu-Page {
+  display: block;
+}
+
+.top-nav__first > li:hover > a,
+.top-nav__first .menu-Blog li:hover a,
+.top-nav__first .menu-Page li:hover a {
+  color: darkgoldenrod;
+}
+
+.top-nav__second a:hover {
+  color: darkgoldenrod;
+}
+
+.icon-arrow {
+  font-size: 10px;
+}
+
+.top-nav__img {
+  padding: 10px;
+  width: 150px;
+}
+
+.top-nav__second {
+  display: flex;
+}
+
+.top-nav__second a {
+  color: #000;
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+.top-nav__second__icon i {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/* end top-nav */
+
+.main {
+  position: relative;
+}
+
+.main-text {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  padding-left: 60px;
+  padding-right: 20px;
+}
+
+.main-text__ss {
+  padding: 9px 30px 11px;
+  border-radius: 4px;
+  line-height: 32px;
+  color: #fff;
+  background-color: #1a1a1a;
+  transition: all 0.5s;
+  border: 1px solid #000;
+}
+.main-text__ss:hover {
+  color: #fff;
+  background: #ba933e;
+  border: 1px solid #ba933e;
+}
+.main-text h1 {
+  color: #444444;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.main-text h1 a:nth-child(1) {
+  color: dimgray;
+}
+.main-text h1 span {
+  color: #ba933e;
+}
+
+.main-text h2 {
+  font-size: 48px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* css login */
+
+.login {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+h4 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-box {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
+.input-box p {
+  padding: 5px 0;
+}
+
+.input-box input {
+  padding: 8px 16px;
+  width: 100%;
+  border: 1px solid #cccccc;
+  outline: none;
+}
+
+.btn-first {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  padding: 10px 151px;
+  cursor: pointer;
+}
+
+.btn-second p a {
+  text-decoration: none;
+  color: #000;
+}
+
+.btn-second {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+
