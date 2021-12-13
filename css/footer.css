@@ -1,54 +1,63 @@
 .footer {
-  padding: 50px 0 10px;
-  width: 100%;
-  background: linear-gradient(to right, #0a1346, #33031d);
-  font-size: 13px;
-  color: darkslateblue;
-  overflow-x: hidden;
+    padding: 50px 0 10px;
+    width: 100%;
+    background: linear-gradient(to right, #0a1346, #33031d);
+    font-size: 13px;
+    color: darkslateblue;
+    overflow-x: hidden; 
+
 }
 .footer .row .col img {
-  margin-left: 50px;
-  margin-bottom: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px;
 }
 .footer section {
-  margin-left: 40px;
-  font-size: 20px;
+   margin-left: 40px;
+   font-size: 20px;
 }
 .footer section a {
-  margin: none;
-  padding-left: 5px;
-  padding-right: 5px;
+    margin: none;
+    padding-left: 5px;
+    padding-right: 5px;
+
 }
 .footer .row .col p {
-  margin-left: 30px;
+    margin-left: 30px;
 }
 .footer .row .col h4 {
-  margin-bottom: 20px;
-  font-size: 20px;
-  color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
 }
 .footer .row .col ul {
-  padding: 0px;
+    padding: 0px;
 }
 .footer .row .col ul li {
-  color: lightsteelblue;
+    color: lightsteelblue;
+
 }
 .footer .row .col a img {
-  margin-left: 170px;
-  margin-bottom: 10px;
+    margin-left: 170px;
+    margin-bottom: 10px;
 }
 .footer .row .col .hr-left {
-  float: left;
-  width: 96%;
+    float: left; 
+    width: 96%;
 }
 .footer .row .col .hr-right {
-  float: right;
-  width: 2%;
+    float: right; 
+    width: 2%;
 }
 .footer .row .col a .fa {
-  margin-left: 5px;
-  margin-top: 20px;
+    margin-left: 5px;
+    margin-top: 20px; 
 }
 .footer .row .col .col-end {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
+
+
+
+
+
+

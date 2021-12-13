@@ -1,124 +1,16 @@
-// ====== Product Category ========
-$(document).ready(function () {
-  const viewAmount = 9;
-
-  renderBtn(products);
-  renderProductCate(products);
-
-  // filter category type
-  $(".Sidebar__listOption input").on("change", function () {
-    const type = $("input[name=checkproduct]:checked").val();
-    if (type == "All") {
-      renderProductCate(products);
-      renderBtn(products);
+function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
     } else {
-      const data = products.filter((val) => {
-        return val.type == type;
-      });
-
-      renderProductCate(data);
-      renderBtn(data);
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
     }
-  });
-
-  // filter sort
-  $("#low").on("click", function () {
-    const data = products.sort((a, b) => +a.price - +b.price);
-    renderProductCate(data.reverse());
-  });
-
-  $("#high").on("click", function () {
-    const data = products.sort((a, b) => +a.price - +b.price);
-    renderProductCate(data);
-  });
-
-  $(".SortCategory__filterList .SortCategory__filterItem").on(
-    "click",
-    function () {
-      $(".SortCategory__filterList .SortCategory__filterItem").removeClass(
-        "active"
-      );
-      $(this).addClass("active");
-    }
-  );
-
-  // function render to view
-  function renderProductCate(data) {
-    const current = +$(".group-btn-products ul li a.active").html();
-    console.log("current", current);
-    var start = (current - 1) * viewAmount;
-    var end = start + viewAmount;
-
-    $("#listProductCategory").empty();
-    const products = data.slice(start, end).map(
-      (item) => `
-            <div class="col-sm-6 col-lg-4 col-xl-4 item">
-                <div class="product" data-id=${item.id}>
-                    <div class="img">
-                        <a href="#">
-                            <img src="${item.img}" alt="">
-                            <img src="${item.img1}" alt="">
-                        </a>
-                        <button class="btn a-center d-flex addCartItem" data-id=${item.id}>
-                            <i class="bi bi-handbag"></i> Add To Card
-                        </button>
-                        <ul class="action action1">
-                            <li class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
-                            </li>
-                            <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                            <li class="detail"><i class="fas fa-eye"></i><span>View Details</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="content">
-                        <h4>${item.name}</h4>
-                        <div class="price">
-                            $${item.price}
-                        </div>
-                    </div>
-                </div>
-
-                
-            </div>`
-    );
-    $("#listProductCategory").append(products);
   }
-
-  // render group btn
-  function renderBtn(data) {
-    const btn = $(".group-btn-products");
-    btn.empty();
-    const amount = Math.ceil(data.length / viewAmount);
-    var html = ` `;
-    for (let i = 1; i <= amount; i++) {
-      html += `<li>
-                <a href="#" class ="${
-                  i == 1 ? "active" : ""
-                }" data-id = ${i}> ${i}</a>
-            </li>`;
-    }
-    btn.append(`
-            <ul>${html}</ul>
-        `);
-  }
-
-  // when you click on btn pagination
-  $(document).on("click", ".group-btn-products ul li a", function (e) {
-    e.preventDefault();
-    const current = $(".group-btn-products ul li a.active");
-    const ele = $(this);
-
-    if (ele) {
-      current.removeClass("active");
-      ele.addClass("active");
-      renderProductCate(products);
-    }
-
-    $("html,body").animate(
-      {
-        scrollTop: 0,
-      },
-      0
-    );
-  });
-});
+  
