@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="./css/reset.css">
     <!-- LIST PRODUCT CSS -->
     <link rel="stylesheet" href="./css/listProduct.css">
+    <!-- OWL CAROUSEL CSS -->
+    <link rel="stylesheet" href="./css/owlCarousel.css">
+    <!-- FOOTER -->
+    <link rel="stylesheet" href="./css/header.css">
     <!-- FOOTER -->
     <link rel="stylesheet" href="./css/footer.css">
     <!-- MAIN CSS -->
@@ -40,21 +44,116 @@
     <div class="grid-container">
         <!-- HEADER  -->
         <header class="header">
-            <!-- TOP BAR -->
-            <section class="top-bar"></section>
-            <!-- NAV -->
-            <nav class="top-nav"></nav>
+            <div class="header__first">
+                <div class="top-bar">
+                    <ul class="top-bar__first">
+                        <li><i class="bi bi-telephone-outbound"></i> (+39) 35 2568 4593</li>
+                        <li><i class="far fa-envelope"></i>hello@domain.com</li>
+                    </ul>
+                    <ul class="top-bar__second">
+                        <li>Free shipping on all orders over $79</li>
+                        <li>Shop Now!</li>
+                    </ul>
+                    <ul class="top-bar__third">
+                        <li class="top-bar__third--region">
+                            <a href="">Enlish <i class="icon-arrow fa fa-angle-down"></i></a>
+                            <ul class="menu-English">
+                                <li><a href="">French</a></li>
+                                <li><a href="">Japanese</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-bar__third--price"><a href="">Usd <i class="icon-arrow fa fa-angle-down"></i></a></li>
+                        <div class="top-bar__third--icon">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"> <i class="fab fa-twitter"></i></a>
+                            <a href="#"> <i class="fab fa-youtube"></i></a>
+                            <a href="#"> <i class="fab fa-pinterest"></i></a>
+                            <a href="#"> <i class="fa fa-envelope"></i></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-header">
+                <div class="top-nav">
+                    <img class="top-nav__img" src="./img/logo/logo_x2.png">
+                    <ul class="top-nav__first">
+                        <li><a href="#">Home <i class="icon-arrow fa fa-angle-down"></i></a></li>
+                        <li><a href="products.html">Shop <i class="icon-arrow fa fa-angle-down"></i></a></li>
+                        <li class="top-nav__first__Page">
+                            <a href="#">Page <i class="icon-arrow fa fa-angle-down"></i></a>
+                            <ul class="menu-Page">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Wishlist</a></li>
+                                <li><a href="#">My Account</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-nav__first__Blog">
+                            <a href="#">Blog <i class="icon-arrow fa fa-angle-down"></i></a>
+                            <ul class="menu-Blog">
+                                <li><a href="#">Big Image</a></li>
+                                <li><a href="#">Grid Layout</a></li>
+                                <li><a href="#">Left Sidebar</a></li>
+                                <li><a href="#">Right Sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <div class="top-nav__second">
+                        <div class="top-nav__second--login-regis"><i class="far fa-user"></i>
+                            <a href="./login.html">Login</a>/<a class="top-nav__second--regis" href="#">Register</a>
+                        </div>
+                        <div class="top-nav__second__icon">
+                            <i class="bi bi-heart"></i>
+                            <i class="bi bi-handbag"></i>
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
         <!-- MAIN  -->
         <main class="main">
             <!-- COVER -->
-            <section class="cover"></section>
+            <section class="cover">
+                <!-- SLIDER -->
+                <div class="slider">
+                    <div class="owl-carousel owl-theme" id="main-slider">
+                        <div class="item">
+                            <img src="./img/slider/slider81.jpg" alt="banner1" class="img-fluid">
+                            <div class="main-text">
+                                <h1><a>Quick parcel delivery</a>, <span>from$25</span></h1>
+                                <h2>Everyone's Talking About <br> Collection AW 2020</h2>
+                                <button class="btn btn-primary main-text__ss">Start Shopping</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="./img/slider/slider82.jpg" alt="banner1" class="img-fluid">
+                            <div class="main-text">
+                                <h1><a>Quick parcel delivery</a>, <span>from$25</span></h1>
+                                <h2>Cover Up! Spring is coming <br>
+                                    Extra 40% off now</h2>
+                                <button class="btn btn-primary main-text__ss">Start Shopping</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="./img/slider/slider83.jpg" alt="banner1" class="img-fluid">
+                            <div class="main-text">
+                                <h1><a>Quick parcel delivery</a>, <span>from$25</span></h1>
+                                <h2>New Season Women's Fashion <br>
+                                    Up to 70% off now!</h2>
+                                <button class="btn btn-primary main-text__ss">Start Shopping</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!-- TRENDING TOP-->
             <section class="trending trending-top">
                 <!-- BANNERS -->
                 <div class="container py-5">
                     <div class="banners row">
-                        <div class="col-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 wrapper-banner">
                             <div class="banners-item">
                                 <img src="./img/banner/home8-banner-1.jpg" alt="banner1" class="banners-item__image">
                                 <div class="banners-item__content">
@@ -65,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 wrapper-banner">
                             <div class="banners-item">
                                 <img src="./img/banner/home8-banner-2.jpg" alt="banner2" class="banners-item__image">
                                 <div class="banners-item__content">
@@ -76,7 +175,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 wrapper-banner">
                             <div class="banners-item">
                                 <img src="./img/banner/home8-banner-3.jpg" alt="banne3" class="banners-item__image">
                                 <div class="banners-item__content">
@@ -105,7 +204,7 @@
                 </div>
             </section>
             <!-- BANNER -->
-            <section class="banner">
+            <section class="banner wrapper-banner">
                 <div class="container">
                     <div class="banner__content">
                         <div class="banner__top">
@@ -119,8 +218,8 @@
                         <p class="banner__markdown">
                             Markdowns up to 69% off regular price
                         </p>
-                        <button href="#" class="btn btn-dark banner__button">Shop Collection <i
-                                class="fas fa-angle-right"></i></button>
+                        <a href="#" class="btn btn-dark banner__button">Shop Collection <i
+                                class="fas fa-angle-right"></i></a>
                     </div>
                 </div>
             </section>
@@ -171,41 +270,43 @@
                     </div>
                     <div class="col">
                         <h4>Customer Sevices</h4>
-                        <ul>
-                            <li><a href="#" class="text-secondary">My Account</a></li>
-                            <li><a href="#" class="text-secondary">Track Your Order</a></li>
-                            <li><a href="#" class="text-secondary">FAOs</a></li>
-                            <li><a href="#" class="text-secondary">Payment Methods</a></li>
-                            <li><a href="#" class="text-secondary">Shipping Guide</a></li>
-                            <li><a href="#" class="text-secondary">Products Support</a></li>
-                            <li><a href="#" class="text-secondary">Gift Card Balance</a></li>
+                        <ul class="list-contact">
+                            <li><a href="#" class="text-secondary fw-bold">My Account</a></li>
+                            <li><a href="#" class="text-secondary fw-bold">Track Your Order</a></li>
+                            <li><a href="#" class="text-secondary fw-bold">FAOs</a></li>
+                            <li><a href="#" class="text-secondary fw-bold">Payment Methods</a></li>
+                            <li><a href="#" class="text-secondary fw-bold">Shipping Guide</a></li>
+                            <li><a href="#" class="text-secondary fw-bold ">Products Support</a></li>
+                            <li><a href="#" class="text-secondary fw-bold">Gift Card Balance</a></li>
                         </ul>
                     </div>
                     <div class="col">
                         <h4>More From Rubix</h4>
-                        <div class="sci">
+                        <div class="list-contact">
                             <ul>
-                                <li><a href="#" class="text-secondary">About Rubix</a></li>
-                                <li><a href="#" class="text-secondary">Our Guarantees</a></li>
-                                <li><a href="#" class="text-secondary">Terms and Conditions</a></li>
-                                <li><a href="#" class="text-secondary">Wishlist</a></li>
-                                <li><a href="#" class="text-secondary">Return Policy</a></li>
-                                <li><a href="#" class="text-secondary">Delivery & Return</a></li>
-                                <li><a href="#" class="text-secondary">Sitemap</a></li>
+                                <li><a href="#" class="text-secondary fw-bold">About Rubix</a></li>
+                                <li><a href="#" class="text-secondary fw-bold">Our Guarantees</a></li>
+                                <li><a href="#" class="text-secondary fw-bold">Terms and Conditions</a></li>
+                                <li><a href="#" class="text-secondary fw-bold">Wishlist</a></li>
+                                <li><a href="#" class="text-secondary fw-bold">Return Policy</a></li>
+                                <li><a href="#" class="text-secondary fw-bold">Delivery & Return</a></li>
+                                <li><a href="#" class="text-secondary fw-bold">Sitemap</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col">
-                        <h4 class="col-end">Let's Talk</h4>
-                        <ul>
-                            <li><a href="#" class="text-secondary"><i class="fa fa-phone" aria-hidden="true"></i>&ensp;
+                        <h4>Let's Talk</h4>
+                        <ul class="list-talk">
+                            <li><a href="#" class="text-secondary fw-bold"><i
+                                        class="bi bi-telephone-outbound"></i>&ensp;
                                     +391(0)35 2568 4593</a></li>
-                            <li><a href="#" class="text-secondary"><i class="fa fa-envelope-o"
-                                        aria-hidden="true"></i>hello@domain.com</a></li>
+                            <li><a href="#" class="text-secondary fw-bold"><i
+                                        class="far fa-envelope me-3"></i>hello@domain.com</a>
+                            </li>
                         </ul>
                         <h4 class="col-end">Find Us</h4>
                         <ul class="map">
-                            <li><a href="#" class="text-secondary"><i class="fa fa-map-marker"
+                            <li><a href="#" class="text-secondary fw-bold"><i class="fa fa-map-marker"
                                         aria-hidden="true"></i>&ensp; 502 New
                                     Design Str <br> Melbourne,Australia</a>
                             </li>
@@ -225,7 +326,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p class="text-secondary">Copyright &copy;
+                        <p class="text-secondary copyright">Copyright &copy;
                             <a href="#" class="text-white">Rubix</a> all rights reserved.
                         </p>
                     </div>
@@ -248,7 +349,34 @@
     <!-- OWL JS -->
     <script src="./owlcarousel/owl.carousel.min.js"></script>
     <script src="./js/owlcarousel.js"></script>
-
+    <!-- #main-slider -->
+    <script>
+        $('#main-slider').owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            margin: 20,
+            dots: true,
+            items: 1,
+            navText: [
+                `<i class="fas fa-chevron-left"></i>`,
+                `<i class="fas fa-chevron-right"></i>`,
+            ],
+            animateIn: 'fadeIn',
+            animateOut: 'fadeOut',
+            responsive: {
+                0: {
+                    nav: false,
+                },
+                992: {
+                    nav: false,
+                },
+                1024: {
+                    nav: true,
+                },
+            },
+        })
+    </script>
     <!-- MAIN JS -->
     <script src="./js/main.js"></script>
 </body>
