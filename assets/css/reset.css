@@ -1,0 +1,38 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Red Hat Display", Sans-serif;
+  font-size: 16px;
+  background-color: white;
+  color: #000000;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+  border: none;
+}
+
+a,
+button {
+  text-decoration: none;
+  color: #1a1a1a;
+  border: none;
+}
+
+a:hover {
+  color: #1a1a1a;
+}

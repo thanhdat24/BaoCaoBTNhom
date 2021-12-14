@@ -1,18 +1,24 @@
 /* Nguyễn Tuấn Cảnh B1906632 */
 /* css index */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 /* start top-bar */
-.header__first {
-  background-color: whitesmoke;
-}
+
 .top-bar {
   height: 60px;
+  background-color: whitesmoke;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  width: 97%;
-  margin: 0 auto;
 }
 
 .top-bar__first,
@@ -31,90 +37,30 @@
   padding: 3px 8px;
   margin-left: 8px;
   font-size: 14px;
-  cursor: pointer;
 }
 
 .top-bar__first li,
 .top-bar__second li {
   padding: 0 15px;
   list-style: none;
-  cursor: pointer;
 }
-.top-bar__third li {
-  padding: 0 10px;
-}
-.top-bar__first li i {
-  margin-right: 5px;
-  font-size: 14px;
-}
-.top-bar__third--region {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.top-bar__third--region a {
-  display: inline-block;
-}
-.top-bar__third--region a:hover {
-  color: #ba933e;
-}
-.top-bar__third--icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.top-bar__third--icon a {
-  display: inline-block;
-  padding: 5px 10px;
-}
-.top-bar__third--icon a i {
-  color: #666;
-  transition: all 0.2s;
-}
+
 .top-bar__third a {
+  padding: 0 5px;
   text-decoration: none;
   color: #000;
 }
 
-.top-bar__third a:hover i {
+.top-bar__third a:hover {
   color: darkgoldenrod;
 }
 
-.top-bar__third--region {
-  display: inline-block;
-  cursor: pointer;
+.top-bar__third__logo {
+  padding: 0 15px;
 }
 
-.menu-English {
-  display: none;
-  position: absolute;
-  background-color: white;
-  z-index: 5;
-  padding: 15px;
-  border-radius: 0 0 5px 5px;
-  min-width: 150px;
-  box-shadow: 0px 2px 4px rgb(0 0 0 / 10%);
-}
-
-.menu-English li {
-  display: block;
-  color: #000;
-  text-decoration: none;
-  padding-bottom: 5px;
-}
-
-.menu-English li a {
-  text-align: left;
-}
-
-.top-bar__third--region:hover .menu-English {
-  display: block;
-  transition: all 0s;
-}
-
-.top-bar__third > li:hover > a,
-.top-bar__third .menu-English li:hover a {
-  color: darkgoldenrod;
+.top-bar__third__logo i {
+  padding: 0 10px;
 }
 
 /* end top-bar */
@@ -148,12 +94,17 @@
   cursor: pointer;
 }
 
+.top-nav__first .menu-Blog li a,
+.top-nav__first .menu-Page li a {
+  line-height: 50px;
+}
+
 .menu-Blog,
 .menu-Page {
   display: none;
   position: absolute;
   background-color: white;
-  z-index: 5;
+  z-index: 1;
 }
 
 .menu-Blog li,
@@ -191,17 +142,12 @@
   display: flex;
 }
 
-.top-nav__second .top-nav__second--regis {
-  border-right: 1px solid #ccc;
-}
 .top-nav__second a {
   color: #000;
   text-decoration: none;
   padding: 0 20px;
 }
-.top-nav__second__icon {
-  margin-left: 10px;
-}
+
 .top-nav__second__icon i {
   padding: 0 10px;
   cursor: pointer;
@@ -254,7 +200,6 @@
   margin-bottom: 25px;
 }
 
-
 /* css login */
 
 .login {
@@ -275,7 +220,7 @@
   border-radius: 10px;
 }
 
-.login-form h4 {
+h4 {
   color: black;
   font-size: 30px;
   margin-bottom: 30px;
