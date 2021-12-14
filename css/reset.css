@@ -15,8 +15,12 @@ body {
 ul,
 ol {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
+li {
+  list-style: none;
+}
 input,
 button,
 textarea {

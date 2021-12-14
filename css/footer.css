@@ -1,10 +1,9 @@
 .footer {
   padding: 50px 0 10px;
   width: 100%;
-  background: linear-gradient(to right, #0a1346, #33031d);
+  background: #1a1a1a;
   font-size: 13px;
-  color: darkslateblue;
-  overflow-x: hidden;
+  color: #fff;
 }
 .footer .row .col img {
   margin-left: 50px;
@@ -18,17 +17,36 @@
   margin: none;
   padding-left: 5px;
   padding-right: 5px;
+  font-size: 27px;
 }
 .footer .row .col p {
   margin-left: 30px;
 }
 .footer .row .col h4 {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
+  font-weight: 700;
 }
-.footer .row .col ul {
-  padding: 0px;
+.footer .row .col .list-contact li {
+  padding: 4px 0px;
+}
+.footer .row .col .list-talk li {
+  padding: 4px 0px;
+}
+.list-contact,
+.list-talk,
+.map {
+  padding-left: 0;
+}
+.list-contact li a,
+.list-talk li a,
+.map li a {
+  text-decoration: none;
+}
+.list-talk li a i,
+.map li a i {
+  font-size: 18px;
 }
 .footer .row .col ul li {
   color: lightsteelblue;
@@ -50,5 +68,13 @@
   margin-top: 20px;
 }
 .footer .row .col .col-end {
+  margin-top: 13px;
   margin-bottom: 0px;
+}
+.footer .row .col .copyright {
+  letter-spacing: 0.8px;
+  font-size: 16px;
+}
+.copyright a {
+  text-decoration: none;
 }
