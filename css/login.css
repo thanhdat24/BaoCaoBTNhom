@@ -1,0 +1,70 @@
+/* css login */
+
+.login {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.login-form h4 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.input-box {
+  margin-bottom: 10px;
+}
+.input-box p {
+  margin-bottom: 10px;
+}
+.input-box input {
+  padding: 8px 16px;
+  width: 100%;
+  border: 1px solid #cccccc;
+  outline: none;
+}
+
+.btn-first {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 15px;
+}
+.btn-first:hover {
+  background: #ba933e;
+}
+.btn-second p a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.2s;
+}
+.btn-second a:hover {
+  color: #ba933e;
+}
+.btn-second {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 15px;
+}
