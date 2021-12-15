@@ -146,3 +146,11 @@ section.banner .container {
 .banner__content .banner__button i {
   margin-left: 10px;
 }
+
+/* Modal  */
+.modal .modal-content .modal-title {
+  font-weight: bold;
+}
+.modal .modal-content .modal-body .total td:nth-child(2) {
+  font-weight: bold;
+}

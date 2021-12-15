@@ -1,65 +1,28 @@
-// ====== Product Category ========
-$(document).ready(function () {
-  const viewAmount = 9;
-
-  renderBtn(products);
+window.onload = function (e) {
+  e.preventDefault();
   renderProductCate(products);
 
-  // filter category type
-  $(".Sidebar__listOption input").on("change", function () {
-    const type = $("input[name=checkproduct]:checked").val();
-    if (type == "All") {
-      renderProductCate(products);
-      renderBtn(products);
-    } else {
-      const data = products.filter((val) => {
-        return val.type == type;
-      });
-
-      renderProductCate(data);
-      renderBtn(data);
-    }
-  });
-
-  // filter sort
-  $("#low").on("click", function () {
-    const data = products.sort((a, b) => +a.price - +b.price);
-    renderProductCate(data.reverse());
-  });
-
-  $("#high").on("click", function () {
-    const data = products.sort((a, b) => +a.price - +b.price);
-    renderProductCate(data);
-  });
-
-  $(".SortCategory__filterList .SortCategory__filterItem").on(
-    "click",
-    function () {
-      $(".SortCategory__filterList .SortCategory__filterItem").removeClass(
-        "active"
-      );
-      $(this).addClass("active");
-    }
-  );
-
-  // function render to view
-  function renderProductCate(data) {
-    const current = +$(".group-btn-products ul li a.active").html();
-    console.log("current", current);
-    var start = (current - 1) * viewAmount;
-    var end = start + viewAmount;
-
-    $("#listProductCategory").empty();
-    const products = data.slice(start, end).map(
-      (item) => `
+  renderMiniCart(miniCart);
+  // renderProduct(products);
+};
+const getELE = (id) => {
+  return document.getElementById(id);
+};
+function renderProductCate(data) {
+  let divProduct = getELE("listProductCategory");
+  let productItem = "";
+  for (let item of data) {
+    productItem += `
             <div class="col-sm-6 col-lg-4 col-xl-4 item">
-                <div class="product" data-id=${item.id}>
+                <div class="product" data-id=${item.id} id="dataID">
                     <div class="img">
                         <a href="#">
                             <img src="${item.img}" alt="">
                             <img src="${item.img1}" alt="">
                         </a>
-                        <button class="btn a-center d-flex addCartItem" data-id=${item.id}>
+                        <button class="btn a-center d-flex addCartItem" onclick="clickAddToCard(${
+                          item.id
+                        },event)">
                             <i class="bi bi-handbag"></i> Add To Card
                         </button>
                         <ul class="action action1">
@@ -73,52 +36,47 @@ $(document).ready(function () {
                     <div class="content">
                         <h4>${item.name}</h4>
                         <div class="price">
-                            $${item.price}
+                            đ ${(item.price * 1).toLocaleString()}
                         </div>
                     </div>
                 </div>
-
-                
-            </div>`
-    );
-    $("#listProductCategory").append(products);
+            </div>
+    `;
   }
+  divProduct.innerHTML = productItem;
+}
 
-  // render group btn
-  function renderBtn(data) {
-    const btn = $(".group-btn-products");
-    btn.empty();
-    const amount = Math.ceil(data.length / viewAmount);
-    var html = ` `;
-    for (let i = 1; i <= amount; i++) {
-      html += `<li>
-                <a href="#" class ="${
-                  i == 1 ? "active" : ""
-                }" data-id = ${i}> ${i}</a>
-            </li>`;
-    }
-    btn.append(`
-            <ul>${html}</ul>
-        `);
-  }
+// filter sort
 
-  // when you click on btn pagination
-  $(document).on("click", ".group-btn-products ul li a", function (e) {
-    e.preventDefault();
-    const current = $(".group-btn-products ul li a.active");
-    const ele = $(this);
-
-    if (ele) {
-      current.removeClass("active");
-      ele.addClass("active");
-      renderProductCate(products);
-    }
-
-    $("html,body").animate(
-      {
-        scrollTop: 0,
-      },
-      0
-    );
-  });
+const sortLow = getELE("low");
+sortLow.addEventListener("click", function () {
+  const data = products.sort((a, b) => +a.price - +b.price);
+  renderProductCate(data.reverse());
 });
+
+const sortHight = getELE("high");
+sortHight.addEventListener("click", function () {
+  const data = products.sort((a, b) => +a.price - +b.price);
+  renderProductCate(data);
+});
+
+const optionInput = document.querySelectorAll("input[name='checkproduct']");
+const findSelected = () => {
+  const type = document.querySelector(
+    "input[name='checkproduct']:checked"
+  ).value;
+  if (type == "All") {
+    renderProductCate(products);
+  } else {
+    const data = products.filter((val) => {
+      return val.type == type;
+    });
+    renderProductCate(data);
+  }
+};
+
+optionInput.forEach((item) => {
+  item.addEventListener("change", findSelected);
+});
+
+findSelected();

@@ -32,7 +32,9 @@
     <link rel="stylesheet" href="./css/listProduct.css">
     <!-- OWL CAROUSEL CSS -->
     <link rel="stylesheet" href="./css/owlCarousel.css">
-    <!-- FOOTER -->
+    <!-- SUBSCRIBE -->
+    <link rel="stylesheet" href="./css/subscribe.css">
+    <!-- HEADER -->
     <link rel="stylesheet" href="./css/header.css">
     <!-- FOOTER -->
     <link rel="stylesheet" href="./css/footer.css">
@@ -62,7 +64,8 @@
                                 <li><a href="">Japanese</a></li>
                             </ul>
                         </li>
-                        <li class="top-bar__third--price"><a href="">Usd <i class="icon-arrow fa fa-angle-down"></i></a></li>
+                        <li class="top-bar__third--price"><a href="">Usd <i class="icon-arrow fa fa-angle-down"></i></a>
+                        </li>
                         <div class="top-bar__third--icon">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"> <i class="fab fa-twitter"></i></a>
@@ -77,7 +80,7 @@
                 <div class="top-nav">
                     <img class="top-nav__img" src="./img/logo/logo_x2.png">
                     <ul class="top-nav__first">
-                        <li><a href="#">Home <i class="icon-arrow fa fa-angle-down"></i></a></li>
+                        <li><a href="index.html">Home <i class="icon-arrow fa fa-angle-down"></i></a></li>
                         <li><a href="products.html">Shop <i class="icon-arrow fa fa-angle-down"></i></a></li>
                         <li class="top-nav__first__Page">
                             <a href="#">Page <i class="icon-arrow fa fa-angle-down"></i></a>
@@ -103,15 +106,57 @@
                         <div class="top-nav__second--login-regis"><i class="far fa-user"></i>
                             <a href="./login.html">Login</a>/<a class="top-nav__second--regis" href="#">Register</a>
                         </div>
-                        <div class="top-nav__second__icon">
-                            <i class="bi bi-heart"></i>
-                            <i class="bi bi-handbag"></i>
-                            <i class="bi bi-search"></i>
-                        </div>
+                        <ul class="top-nav__second__icon">
+                            <li class="item addWishlist"><a><i class="bi bi-heart"></i></a><span class="before">0</span>
+                            </li>
+                            <li class="item card-item"> <a data-bs-toggle="modal" data-bs-target="#cardModal"><i
+                                        class="bi bi-handbag"></i></a><span class="before" id="before">0</span></li>
+                            <li><a><i class="bi bi-search"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </header>
+        <!-- Modal -->
+        <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="modalCard" aria-hidden="true">
+            <div style="min-width: 800px;" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCard">Giỏ hàng</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr style="text-align:center">
+                                    <th scope="col">Hình ảnh</th>
+                                    <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Số lượng</th>
+                                    <th scope="col">Đơn giá</th>
+                                    <th scope="col">Thành tiền</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="mini-cart-product">
+
+                            </tbody>
+                            <tfoot>
+                                <tr class="total">
+                                    <td colSpan="4"></td>
+                                    <td>Tổng tiền</td>
+                                    <td class="sub-total" id="sub-total"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">View Cart</button>
+                        <button type="button" class="btn btn-primary">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- MAIN  -->
         <main class="main">
             <!-- COVER -->
@@ -196,7 +241,7 @@
                             </div>
                         </div>
                         <div class="trending-product__list">
-                            <div class="owl-carousel owl-theme listProduct" id="products1">
+                            <div class="listProduct row products1" id="products1">
 
                             </div>
                         </div>
@@ -237,23 +282,33 @@
                     </div>
 
                     <div class="trending-product__list">
-                        <div class="owl-carousel owl-theme listProduct" id="products2">
+                        <div class="row listProduct" id="products2">
 
                         </div>
                     </div>
                 </div>
             </section>
             <!-- SUBSCRIBE -->
-            <section class="subscribe"></section>
+            <section class="subscribe">
+                <div class="box">
+                    <form>
+                        <h2>Subcribe To Our Newsletter</h2>
+                        <p>Sing up for the weekly newsletter and build better ecommerce stores.</p>
+                        <input type="email" placeholder="Enter to your email address" required>
+                        <button type="submit">Subscribe</button>
+                        <p class="text-secondary">We respect your privacy, so we never share your info.</p>
+                    </form>
+                </div>
+            </section>
             <!-- BLOG -->
             <section class="blog"></section>
         </main>
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="container">
+            <div class="contaniner">
                 <div class="row">
                     <div class="col">
-                        <img src="./img/logo/logo-footer-rubix.png" alt="logo_x2">
+                        <img src="./img/logo/logo-footer-rubix.png " alt="logo_x2">
                         <section>
                             <a class="btn-floating text-white" href="#!" role="button">
                                 <i class="fab fa-facebook-f"></i></a>
@@ -270,69 +325,64 @@
                     </div>
                     <div class="col">
                         <h4>Customer Sevices</h4>
-                        <ul class="list-contact">
-                            <li><a href="#" class="text-secondary fw-bold">My Account</a></li>
-                            <li><a href="#" class="text-secondary fw-bold">Track Your Order</a></li>
-                            <li><a href="#" class="text-secondary fw-bold">FAOs</a></li>
-                            <li><a href="#" class="text-secondary fw-bold">Payment Methods</a></li>
-                            <li><a href="#" class="text-secondary fw-bold">Shipping Guide</a></li>
-                            <li><a href="#" class="text-secondary fw-bold ">Products Support</a></li>
-                            <li><a href="#" class="text-secondary fw-bold">Gift Card Balance</a></li>
+                        <ul>
+                            <li><a href="#" class="text-secondary">My Account</a></li>
+                            <li><a href="#" class="text-secondary">Track Your Order</a></li>
+                            <li><a href="#" class="text-secondary">FAOs</a></li>
+                            <li><a href="#" class="text-secondary">Payment Methods</a></li>
+                            <li><a href="#" class="text-secondary">Shipping Guide</a></li>
+                            <li><a href="#" class="text-secondary">Products Support</a></li>
+                            <li><a href="#" class="text-secondary">Gift Card Balance</a></li>
                         </ul>
                     </div>
                     <div class="col">
                         <h4>More From Rubix</h4>
-                        <div class="list-contact">
+                        <div class="sci">
                             <ul>
-                                <li><a href="#" class="text-secondary fw-bold">About Rubix</a></li>
-                                <li><a href="#" class="text-secondary fw-bold">Our Guarantees</a></li>
-                                <li><a href="#" class="text-secondary fw-bold">Terms and Conditions</a></li>
-                                <li><a href="#" class="text-secondary fw-bold">Wishlist</a></li>
-                                <li><a href="#" class="text-secondary fw-bold">Return Policy</a></li>
-                                <li><a href="#" class="text-secondary fw-bold">Delivery & Return</a></li>
-                                <li><a href="#" class="text-secondary fw-bold">Sitemap</a></li>
+                                <li><a href="#" class="text-secondary">About Rubix</a></li>
+                                <li><a href="#" class="text-secondary">Our Guarantees</a></li>
+                                <li><a href="#" class="text-secondary">Terms and Conditions</a></li>
+                                <li><a href="#" class="text-secondary">Wishlist</a></li>
+                                <li><a href="#" class="text-secondary">Return Policy</a></li>
+                                <li><a href="#" class="text-secondary">Delivery & Return</a></li>
+                                <li><a href="#" class="text-secondary">Sitemap</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col">
-                        <h4>Let's Talk</h4>
-                        <ul class="list-talk">
-                            <li><a href="#" class="text-secondary fw-bold"><i
-                                        class="bi bi-telephone-outbound"></i>&ensp;
+                        <h4 class="col-end">Let's Talk</h4>
+                        <ul>
+                            <li><a href="#" class="text-secondary"><i class="fa fa-phone" aria-hidden="true"></i>&ensp;
                                     +391(0)35 2568 4593</a></li>
-                            <li><a href="#" class="text-secondary fw-bold"><i
-                                        class="far fa-envelope me-3"></i>hello@domain.com</a>
-                            </li>
+                            <li><a href="#" class="text-secondary"><i class="fa fa-envelope-o"
+                                        aria-hidden="true"></i>hello@domain.com</a></li>
                         </ul>
                         <h4 class="col-end">Find Us</h4>
                         <ul class="map">
-                            <li><a href="#" class="text-secondary fw-bold"><i class="fa fa-map-marker"
-                                        aria-hidden="true"></i>&ensp; 502 New
-                                    Design Str <br> Melbourne,Australia</a>
+                            <li><a href="#" class="text-secondary"><i class="fa fa-map-marker"
+                                        aria-hidden="true"></i>&ensp; 502
+                                    New Design Str <br> Melbourne,Australia</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="hr-left">
-                            <hr />
-                        </div>
-                        <div class="hr-right">
-                            <hr />
-                        </div>
-                        <a href="#"><i class="fa fa-chevron-up text-white" aria-hidden="true"></i></a>
+                        <hr>
+                        <a href="#" class="up-arrow">
+                            <i class="fa fa-chevron-up "></i>
+                        </a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="text-secondary copyright">Copyright &copy;
-                            <a href="#" class="text-white">Rubix</a> all rights reserved.
-                        </p>
-                    </div>
-                    <div class="col">
-                        <a href="#"><img src="./img/icon/payment.png" alt="payment"></a>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-secondary">Copyright &copy;
+                        <a href="#" class="text-white">Rubix</a> all rights reserved.
+                    </p>
+                </div>
+                <div class="col">
+                    <img src="./img/icon/payment.png" alt="payment">
                 </div>
             </div>
         </footer>
@@ -348,37 +398,9 @@
 
     <!-- OWL JS -->
     <script src="./owlcarousel/owl.carousel.min.js"></script>
-    <script src="./js/owlcarousel.js"></script>
-    <!-- #main-slider -->
-    <script>
-        $('#main-slider').owlCarousel({
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 4000,
-            margin: 20,
-            dots: true,
-            items: 1,
-            navText: [
-                `<i class="fas fa-chevron-left"></i>`,
-                `<i class="fas fa-chevron-right"></i>`,
-            ],
-            animateIn: 'fadeIn',
-            animateOut: 'fadeOut',
-            responsive: {
-                0: {
-                    nav: false,
-                },
-                992: {
-                    nav: false,
-                },
-                1024: {
-                    nav: true,
-                },
-            },
-        })
-    </script>
-    <!-- MAIN JS -->
     <script src="./js/main.js"></script>
+    <script src="./js/owlcarousel.js"></script>
+    <!-- MAIN JS -->
 </body>
 
 </html>
