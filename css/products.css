@@ -1,10 +1,29 @@
 /* Sidebar__main */
 .CategoryPage {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 .CategoryPage .CategoryPage__title {
   font-size: 32px;
   margin-bottom: 24px;
+  font-weight: bold;
+}
+.CategoryPage__description {
+  margin-bottom: 25px;
+}
+
+.CategoryPage__description a::after {
+  content: "/";
+  padding: 0 8px;
+}
+.CategoryPage__description a {
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.CategoryPage__description a:hover {
+  color: #ba933e;
+}
+.CategoryPage__description span {
+  color: #666;
 }
 .CategoryPage .heading {
   font-size: 20px;
