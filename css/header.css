@@ -2,6 +2,26 @@
 /* css index */
 
 /* start top-bar */
+@-webkit-keyframes down {
+  from {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+header .main-header.active {
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  -webkit-animation: down 1s forwards;
+  animation: down 1s forwards;
+}
+
 .header__first {
   background-color: whitesmoke;
 }
@@ -204,16 +224,34 @@
 .top-nav__second a {
   color: #000;
   text-decoration: none;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 .top-nav__second__icon {
   margin-left: 10px;
+  display: flex;
 }
-.top-nav__second__icon i {
-  padding: 0 10px;
+.top-nav__second__icon li {
+  position: relative;
+}
+.top-nav__second__icon li a {
   cursor: pointer;
 }
+.top-nav__second__icon li:hover {
+  color: #ba933e;
+}
 
+.top-nav__second__icon i {
+  padding: 0 10px;
+  font-size: 18px;
+}
+.top-nav__second__icon .item .before {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  font-size: 14px;
+}
 /* end top-nav */
 
 .main {
