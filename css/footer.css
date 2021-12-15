@@ -3,7 +3,8 @@
   width: 100%;
   background: #1a1a1a;
   font-size: 13px;
-  color: #fff;
+  color: darkslateblue;
+  overflow-x: hidden;
 }
 .footer .row .col img {
   margin-left: 50px;
@@ -17,64 +18,47 @@
   margin: none;
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 27px;
+}
+.footer section a i:hover {
+  transform: scale(1.7);
+}
+.footer section a i {
+  transform: scale(1);
+  transition: all 0.5s;
 }
 .footer .row .col p {
   margin-left: 30px;
 }
 .footer .row .col h4 {
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
-  font-weight: 700;
 }
-.footer .row .col .list-contact li {
-  padding: 4px 0px;
-}
-.footer .row .col .list-talk li {
-  padding: 4px 0px;
-}
-.list-contact,
-.list-talk,
-.map {
-  padding-left: 0;
-}
-.list-contact li a,
-.list-talk li a,
-.map li a {
-  text-decoration: none;
-}
-.list-talk li a i,
-.map li a i {
-  font-size: 18px;
+.footer .row .col ul {
+  padding: 0px;
 }
 .footer .row .col ul li {
   color: lightsteelblue;
 }
 .footer .row .col a img {
-  margin-left: 170px;
+  margin-left: 50px;
   margin-bottom: 10px;
 }
-.footer .row .col .hr-left {
-  float: left;
-  width: 96%;
-}
-.footer .row .col .hr-right {
-  float: right;
-  width: 2%;
-}
-.footer .row .col a .fa {
-  margin-left: 5px;
-  margin-top: 20px;
-}
 .footer .row .col .col-end {
-  margin-top: 13px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
-.footer .row .col .copyright {
-  letter-spacing: 0.8px;
-  font-size: 16px;
-}
-.copyright a {
-  text-decoration: none;
+.up-arrow {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: rgba(240, 232, 232, 0.5);
+  border: 1px solid rgb(179, 170, 170);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 40px;
+  right: 20px;
 }
