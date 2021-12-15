@@ -1,0 +1,55 @@
+.subscribe {
+    padding: 0;
+    margin: 0;
+    background-attachment: fixed;
+    background-size: cover; 
+    background-image: url("../img/banner/bg-newsleter-fashion-1.jpg");
+    height: 80vh;  
+} 
+.subscribe .box {
+    max-width: 768px;
+    border-radius: 20px;
+    position: relative;
+    top: 15%;
+    margin: auto;
+    background: white;
+    padding: 80px;
+    color: #fff;
+    text-align: center;
+    opacity: 0.6;
+    filter: alpha(opacity=80);
+}
+.subscribe .box form h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+.subscribe .box form p {
+    color: lightslategrey;
+    font-size: 15px;
+    
+}
+.subscribe .box form input {
+    float: left;
+    width: 78%;
+    box-sizing: border-box;
+    padding: 12px 30px;
+    outline: none;
+    color: lightslategrey;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(212, 212, 212);
+}
+.subscribe .box form button {
+    width: 120px;
+    height: 47px;
+    box-sizing: border-box;
+    padding: 10px;
+    outline: none;
+    background: black;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 25px;  
+}
