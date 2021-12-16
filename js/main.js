@@ -1,7 +1,7 @@
 window.addEventListener("load", function (e) {
   const products = getAllItemProduct();
   e.preventDefault();
-  renderProductCate(products);
+  // renderProductCate(products);
 
   // // thêm sản phẩm có id vào trong mảng
   // addWishList(dataID);
@@ -20,17 +20,21 @@ window.addEventListener("load", function (e) {
     for (let item of data) {
       productItem += `
             <div class="col-sm-6 col-lg-4 col-xl-4 item">
-                <div class="product" data-id=${item.id}>
+                <div class="product" data-id=${item.id} id="dataID">
                     <div class="img">
                         <a href="#">
                             <img src="${item.img}" alt="">
                             <img src="${item.img1}" alt="">
                         </a>
-                        <button class="btn a-center d-flex addCartItem" data-id=${item.id}>
+                        <button class="btn a-center d-flex addCartItem" onclick="clickAddToCard(${
+                          item.id
+                        },event)">
                             <i class="bi bi-handbag"></i> Add To Card
                         </button>
                         <ul class="action action1">
-                            <li class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
+                            <li onclick="clickAddWishList(${
+                              item.id
+                            },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
                             <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
                             <li class="detail"><i class="fas fa-eye"></i><span>View Details</span></li>
@@ -40,7 +44,7 @@ window.addEventListener("load", function (e) {
                     <div class="content">
                         <h4>${item.name}</h4>
                         <div class="price">
-                            $${item.price}
+                            đ ${(item.price * 1).toLocaleString()}
                         </div>
                     </div>
                 </div>
@@ -113,7 +117,6 @@ function renderMiniCart(data) {
   for (let item of data) {
     content += `
       <tr data-id=${item.id} style="text-align:center">
-        <td>${item.id}</td>
         <td><img style="width:90px; height="90px" src="${item.img}" alt="${
       item.name
     }"/></td>
