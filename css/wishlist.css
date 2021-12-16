@@ -1,0 +1,32 @@
+/* Sidebar__main */
+.WishlistPage {
+  padding: 40px 0;
+}
+.WishlistPage .WishlistPage__title {
+  font-size: 32px;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+.WishlistPage__description {
+  margin-bottom: 25px;
+}
+
+.WishlistPage__description a::after {
+  content: "/";
+  padding: 0 8px;
+}
+.WishlistPage__description a {
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.stocked {
+  color: #1cca1c;
+  font-weight: 500;
+  background: #f6ffed;
+  border-color: #b7eb8f;
+  padding: 4px 7px;
+  font-size: 13px;
+  line-height: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
