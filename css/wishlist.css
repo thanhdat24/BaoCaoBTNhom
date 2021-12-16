@@ -19,6 +19,12 @@
   font-weight: 500;
   transition: all 0.2s;
 }
+.WishlistPage__description a:hover {
+  color: #ba933e;
+}
+.WishlistPage__description span {
+  color: #666;
+}
 .stocked {
   color: #1cca1c;
   font-weight: 500;

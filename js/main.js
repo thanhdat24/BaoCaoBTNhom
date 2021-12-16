@@ -1,5 +1,4 @@
 window.addEventListener("load", function (e) {
-  const products = getAllItemProduct();
   e.preventDefault();
   // renderProductCate(products);
 
@@ -224,7 +223,7 @@ function renderWishList(data) {
         <td>${(item.price * 1).toLocaleString("vi-VN")}</td>
         <td><span class="stocked">Trong kho</span></td>
          <td>
-              <button class ="addCartItem" onclick="clickAddToCardWishList(${
+              <button class ="btn btn-primary" onclick="clickAddToCardWishList(${
                 item.id
               },event)">Add to card</button>
          </td>
@@ -247,7 +246,7 @@ function addWishList(id) {
   // Nếu index != -1 thì giỏ hàng đã tồn tại trong giỏ hàng , chỉ việc tăng quantity++
   if (index != -1) {
     // Tìm ra sản phẩm trong giỏ hàng thứ index => tắng số lượng
-    alert("Đã thêm!");
+    alert("Sản phầm đã được yêu thích!");
   }
   // Nếu sản phẩm chưa tồn tại trong giỏ hàng thì thêm sản phẩm vào giỏ hàng kèm theo thuộc tính quantity:1
   else {
@@ -314,3 +313,28 @@ clickAddToCardWishList = (dataID, e) => {
 
   removeItemWishLish(dataID);
 };
+
+//======Render Checkout============
+window.addEventListener("load", function () {
+  renderCheckOut(miniCart);
+});
+
+function renderCheckOut(data = []) {
+  let ListCheckOut = getELE("ListCheckOut");
+  console.log("ListCheckOut", ListCheckOut);
+  let subTotal = getELE("checkout__total-sub");
+  let sumPrice = 0;
+  let content = "";
+  for (let item of data) {
+    content += `
+      <tr data-id=${item.id}>
+        <td>${item.name} × ${item.quantity}</td>
+        <td style="text-align:end">${(item.price * item.quantity).toLocaleString("vi-VN")}</td>
+    </tr>`;
+    sumPrice += item.quantity * item.price;
+  }
+  // render item content
+  ListCheckOut.innerHTML = content;
+  // render tổng tiền trong miniCart
+  subTotal.innerHTML = sumPrice.toLocaleString("vi-VN");
+}

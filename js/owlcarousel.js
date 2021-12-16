@@ -264,13 +264,13 @@ function renderProduct2(data) {
   divProduct1.innerHTML = productItem;
 }
 
-// Scroll window
-$(document).scroll(function () {
-  const currentPos = $(this).scrollTop();
-  $(".main-header").toggleClass("active", currentPos > 150);
-  $(".backtotop").toggleClass("active", currentPos > 500);
-});
 
 function getAllItemProduct() {
   return products;
 }
+
+// https:www.w3schools.com
+ window.addEventListener("scroll", function () {
+  let header = document.querySelector(".main-header");
+  header.classList.toggle("active", window.scrollY > 100);
+});
