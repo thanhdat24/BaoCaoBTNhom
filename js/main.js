@@ -36,7 +36,7 @@ window.addEventListener("load", function (e) {
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
                             <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                            <li class="detail"><i class="fas fa-eye"></i><span>View Details</span></li>
+                            <li class="detail" ><i class="fas fa-eye"></i><span>View Details</span></li>
                         </ul>
                     </div>
 
@@ -50,33 +50,40 @@ window.addEventListener("load", function (e) {
             </div>
     `;
     }
-    divProduct.innerHTML = productItem;
+    if (divProduct !== null) {
+      divProduct.innerHTML = productItem;
+    }
   }
 
   // filter sort
-
   const sortLow = getELE("low");
-  sortLow.addEventListener("click", function () {
-    const data = products.sort((a, b) => +a.price - +b.price);
-    renderProductCate(data.reverse());
-  });
 
+  if (sortLow !== null) {
+    sortLow.addEventListener("click", function () {
+      const data = products.sort((a, b) => +a.price - +b.price);
+      renderProductCate(data.reverse());
+    });
+  }
   const sortHight = getELE("high");
-  sortHight.addEventListener("click", function () {
-    const data = products.sort((a, b) => +a.price - +b.price);
-    renderProductCate(data);
-  });
+  if (sortHight !== null) {
+    sortHight.addEventListener("click", function () {
+      const data = products.sort((a, b) => +a.price - +b.price);
+      renderProductCate(data);
+    });
+  }
 
   const optionInput = document.querySelectorAll("input[name='checkproduct']");
   const findSelected = () => {
-    const type = document.querySelector(
-      "input[name='checkproduct']:checked"
-    ).value;
-    if (type == "All") {
+    const type = document.querySelector("input[name='checkproduct']:checked");
+    let newType = "";
+    if (type !== null) {
+      newType = type.value;
+    }
+    if (newType == "All") {
       renderProductCate(products);
     } else {
-      const data = products.filter((val) => {
-        return val.type == type;
+      const data = products.filter((item) => {
+        return item.type == newType;
       });
       renderProductCate(data);
     }
@@ -107,7 +114,6 @@ window.addEventListener("load", function (e) {
 
 function renderMiniCart(data) {
   let mini_cart = getELE("mini-cart-product");
-  console.log("mini_cart", mini_cart);
   let subTotal = getELE("sub-total");
   let amount = getELE("before");
   let sumPrice = 0;
@@ -132,15 +138,21 @@ function renderMiniCart(data) {
   }
 
   // render item content
-  mini_cart.innerHTML = content;
+  if (mini_cart !== null) {
+    mini_cart.innerHTML = content;
+  }
+
   // render tổng tiền trong miniCart
-  subTotal.innerHTML = sumPrice.toLocaleString("vi-VN");
+  if (subTotal !== null) {
+    subTotal.innerHTML = sumPrice.toLocaleString("vi-VN");
+  }
   // render tổng số lượng  sản phẩm
-  amount.innerHTML = sumQuantity;
+  if (mini_cart !== null) {
+    amount.innerHTML = sumQuantity;
+  }
 }
 
 function addMiniCart(id) {
-  console.log("miniCart", miniCart);
   // duyệt giỏ hàng và kiểm tra id trong giỏ hàng có bằng với id người dùng click không
   let index = miniCart.findIndex((spGioHang) => spGioHang.id === id);
 
@@ -164,13 +176,13 @@ function addMiniCart(id) {
 
   setLocal(miniCart, "dataCart");
 }
+
 clickAddToCard = (dataID, e) => {
   e.preventDefault();
 
   const parent = document.querySelector(".listProduct");
   // Tìm tất cả class='item' bên trong class cho page-main__list
   const children = [...parent.querySelectorAll(".product")];
-  console.log("children", children);
   // duyệt mạng tìm ra class con có thuộc tính data-id = dataId click vào
   children.forEach((child) => {
     child.dataset.id === dataID;
@@ -197,6 +209,7 @@ removeItemMiniCart = (id) => {
 
   // Cập nhật lại giỏ hàng mới
   renderMiniCart(miniCart);
+
   setLocal(miniCart, "dataCart");
 };
 /*=========wishlist========== */
@@ -233,10 +246,11 @@ function renderWishList(data) {
   // render tổng số lượng  sản phẩm
   amount.innerHTML = wishList.length;
   // render item content
-  wish_list.innerHTML = content;
+  if (wish_list !== null) {
+    wish_list.innerHTML = content;
+  }
 }
 function addWishList(id) {
-  console.log("wishList", wishList);
   // duyệt giỏ hàng và kiểm tra id trong giỏ hàng có bằng với id người dùng click không
   let index = wishList.findIndex((spWishList) => spWishList.id === id);
 
@@ -300,7 +314,6 @@ clickAddToCardWishList = (dataID, e) => {
   const parent = document.querySelector(".add-to-wish");
   // Tìm tất cả class='item' bên trong class cho page-main__list
   const children = [...parent.querySelectorAll(".itemWishList")];
-  console.log("children", children);
   // duyệt mạng tìm ra class con có thuộc tính data-id = dataId click vào
   children.forEach((child) => {
     child.dataset.id === dataID;
@@ -309,6 +322,7 @@ clickAddToCardWishList = (dataID, e) => {
   // thêm sản phẩm có id vào trong mảng
   addMiniCart(dataID);
   // render lại giỏ hàng
+
   renderMiniCart(miniCart);
 
   removeItemWishLish(dataID);
@@ -321,7 +335,6 @@ window.addEventListener("load", function () {
 
 function renderCheckOut(data = []) {
   let ListCheckOut = getELE("ListCheckOut");
-  console.log("ListCheckOut", ListCheckOut);
   let subTotal = getELE("checkout__total-sub");
   let sumPrice = 0;
   let content = "";
@@ -329,12 +342,128 @@ function renderCheckOut(data = []) {
     content += `
       <tr data-id=${item.id}>
         <td>${item.name} × ${item.quantity}</td>
-        <td style="text-align:end">${(item.price * item.quantity).toLocaleString("vi-VN")}</td>
+        <td style="text-align:end">${(
+          item.price * item.quantity
+        ).toLocaleString("vi-VN")}</td>
     </tr>`;
     sumPrice += item.quantity * item.price;
   }
   // render item content
-  ListCheckOut.innerHTML = content;
+  if (ListCheckOut !== null) {
+    ListCheckOut.innerHTML = content;
+  }
+
   // render tổng tiền trong miniCart
-  subTotal.innerHTML = sumPrice.toLocaleString("vi-VN");
+  if (subTotal !== null) {
+    subTotal.innerHTML = sumPrice.toLocaleString("vi-VN");
+  }
 }
+
+//======Render Model Details=========
+// window.addEventListener("load", function (e) {
+//   renderMiniCart(miniCart);
+// });
+
+function renderModalDetail(id) {
+  let modal_detail = getELE("modal-detail");
+  let content = "";
+  content = `
+         <div class="img item-modal">
+            <div class="quickview" id="quickview">
+
+            </div>
+
+            <a class="btn btn-primary viewDetails" onclick="clickDetails(${id},event)">
+                 View Details
+            </a>
+
+          </div>
+            <div class="content item-modal" id="item-modal">
+
+            </div> 
+     `;
+  // render item content
+  if (modal_detail !== null) {
+    modal_detail.innerHTML = content;
+  }
+}
+
+//======Render Quick View=========
+// Hàm dùng để show ra sản phẩm trong giỏ hàng
+window.addEventListener("load", function (e) {
+  // renderQuickView(miniCart);
+});
+
+function renderModalQuickView(id) {
+  let quick_view = getELE("quickview");
+  let content = "";
+  const listImg = getAllimg().find((val) => val.id == id);
+  listImg.img.forEach((item) => {
+    content += `
+       <div class="item">
+            <img src="${item}" alt="">
+        </div>`;
+  });
+
+  // render item content
+  if (quick_view !== null) {
+    quick_view.innerHTML = content;
+  }
+}
+
+function renderModalContentQuickView(id) {
+  const data = products.find((val) => val.id == id);
+  let item_modal = getELE("item-modal");
+  let content1 = "";
+  content1 = `
+        <a href="#">${data.name}</a>
+         <div class="star">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i> (1 customer review)
+          </div>
+          <p class="price">$${(data.price * 1).toLocaleString("vi-VN")}</p>
+          <p class="des">
+                Tailored line. Wool mix fabric. Long design. Long buttoned sleeve. Lapel with notch. Back slit.
+                Two pockets with flaps on the front. Button up. Inner lining. Inner pocket. Back length 95.0
+                cm.<br>
+                Summer tops for women<br>
+                Cheetah kimonos ,beach cover ups<br>
+                Lightweight chiffon casual shirts<br>
+                Open front outwear,short sleeve blouse.<br>
+          </p>
+          <div class="action d-flex align-items-center" data-id = ${data.id}>
+                <div class="control-item d-flex align-items-center">
+                    <a class ="dash-1" href=""><i class="bi bi-dash"></i></a>
+                    <input type="text"class="InputAmountProduct" value="1">
+                    <a class ="plus-1" href=""><i class="bi bi-plus"></i></a>
+                </div>
+                <button  class="btn align-items-center d-flex addCartItem" onclick="clickAddToCard(${
+                  data.id
+                },event)">
+                    <i class="bi bi-handbag me-2"></i> Add To Card
+                </button>
+            </div>
+   `;
+  if (item_modal !== null) {
+    item_modal.innerHTML = content1;
+  }
+}
+clickQuickView = (dataID, e) => {
+  e.preventDefault();
+
+  const parent = document.querySelector(".listProduct");
+  // Tìm tất cả class='item' bên trong class cho page-main__list
+  const children = [...parent.querySelectorAll(".product")];
+  // duyệt mạng tìm ra class con có thuộc tính data-id = dataId click vào
+  children.forEach((child) => {
+    child.dataset.id === dataID;
+  });
+  renderModalDetail(dataID);
+  // render lại giỏ hàng
+  renderModalQuickView(dataID);
+
+  renderModalContentQuickView(dataID);
+};

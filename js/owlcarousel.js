@@ -178,6 +178,64 @@ var products = [
   },
 ];
 
+var listImgItem = [
+  {
+    id: 1,
+    img: ["./img/product/20-copy-600x745.jpg"],
+  },
+  {
+    id: 2,
+    img: ["./img/product/3_1-600x745.jpg"],
+  },
+  {
+    id: 3,
+    img: ["./img/product/10_1-copy-600x745.jpg"],
+  },
+  {
+    id: 4,
+    img: ["./img/product/9-copy-600x745.jpg"],
+  },
+  {
+    id: 5,
+    img: ["./img/product/1_1-600x745.jpg"],
+  },
+  {
+    id: 6,
+    img: ["./img/product/8_1-copy-600x745.jpg"],
+  },
+  {
+    id: 7,
+    img: ["./img/product/17_1-copy-600x745.jpg"],
+  },
+  {
+    id: 8,
+    img: ["./img/product/11_1-copy-600x745.jpg"],
+  },
+  {
+    id: 9,
+    img: ["./img/product/19_1-copy-600x745.jpg"],
+  },
+  {
+    id: 10,
+    img: ["./img/product/12-copy-600x745.jpg"],
+  },
+  {
+    id: 11,
+    img: ["./img/product/22_1-copy-600x745.jpg"],
+  },
+  {
+    id: 12,
+    img: ["./img/product/7_1-copy-600x745.jpg"],
+  },
+  {
+    id: 13,
+    img: ["./img/product/2_1-copy-600x745.jpg"],
+  },
+  {
+    id: 14,
+    img: ["./img/product/6_1-copy-600x745.jpg"],
+  },
+];
 const bestSale = products.filter((item) => item.isBest);
 
 function renderProduct1(data) {
@@ -186,7 +244,7 @@ function renderProduct1(data) {
   for (let [index, item] of data.entries()) {
     if (index < 8) {
       productItem += `
-        <div class="col-3 item">
+       <div class="col-sm-6 col-md-4 col-xl-3 item">
                 <div class="product" data-id=${item.id}  id="dataID">
                     <div class="img">
                         <a href="#">
@@ -204,7 +262,9 @@ function renderProduct1(data) {
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
                             <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                            <li class="detail"><i class="fas fa-eye"></i><span>View Details</span></li>
+                            <li onclick="clickQuickView(${
+                              item.id
+                            },event)"  class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
                         </ul>
                     </div>
 
@@ -219,7 +279,9 @@ function renderProduct1(data) {
     `;
     }
   }
-  divProduct1.innerHTML = productItem;
+  if (divProduct1 !== null) {
+    divProduct1.innerHTML = productItem;
+  }
 }
 
 function renderProduct2(data) {
@@ -228,7 +290,7 @@ function renderProduct2(data) {
   for (let [index, item] of data.entries()) {
     if (index < 8) {
       productItem += `
-        <div class="col-3 item">
+        <div class="col-sm-6 col-md-4 col-xl-3 item">
                 <div class="product" data-id=${item.id} id="dataID">
                     <div class="img">
                         <a href="#">
@@ -246,7 +308,9 @@ function renderProduct2(data) {
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
                             <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                            <li class="detail"><i class="fas fa-eye"></i><span>View Details</span></li>
+                            <li onclick="clickQuickView(${
+                              item.id
+                            },event)"  class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
                         </ul>
                     </div>
 
@@ -261,16 +325,19 @@ function renderProduct2(data) {
     `;
     }
   }
-  divProduct1.innerHTML = productItem;
+  if (divProduct1 !== null) {
+    divProduct1.innerHTML = productItem;
+  }
 }
-
-
+function getAllimg() {
+  return listImgItem;
+}
 function getAllItemProduct() {
   return products;
 }
 
 // https:www.w3schools.com
- window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function () {
   let header = document.querySelector(".main-header");
   header.classList.toggle("active", window.scrollY > 100);
 });

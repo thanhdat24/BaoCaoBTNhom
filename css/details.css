@@ -1,0 +1,216 @@
+/* Modal Detail */
+.modal .modal-detail {
+  flex-direction: row;
+}
+.modal .modal-detail .item-modal {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.modal .modal-detail .item-modal .viewDetails {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  background: black;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 0;
+  z-index: 30;
+  border-color: black;
+  font-weight: 600;
+  transform: translateY(100px);
+  transition: all 0.5s;
+}
+.modal .modal-detail .item-modal:hover .viewDetails {
+  transform: translateY(0);
+}
+.modal .modal-detail .item-modal:hover .viewDetails:hover {
+  background-color: #ba933e;
+  border-color: #ba933e;
+}
+.modal .modal-detail .item-modal .quickview img {
+  display: block;
+  width: 100%;
+}
+.modal .modal-detail .content {
+  padding: 40px;
+  overflow: auto;
+}
+.modal .modal-detail .content a {
+  font-size: 24px;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 15px;
+  transition: all 0.4s;
+}
+.modal-detail .item-modal .star i {
+  color: #ba933e;
+}
+.modal-detail .item-modal .price {
+  font-weight: 700;
+  margin: 10px 0 20px;
+}
+.modal-detail .item-modal .des {
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0 0 30px;
+  padding: 0 0 20px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #444;
+  line-height: 24px;
+}
+.modal-detail .item-modal .action {
+  margin-bottom: 40px;
+}
+.modal-detail .item-modal .action .control-item {
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  padding: 0px 5px;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+.modal-detail .item-modal .action .control-item a {
+  margin-bottom: 0;
+}
+.modal-detail .item-modal .action .control-item a:hover {
+  color: #ba933e;
+}
+.modal-detail .item-modal .action .control-item input {
+  background-color: transparent;
+  width: 40px;
+  text-align: center;
+  height: 50px;
+}
+.modal-detail .item-modal .action .addCartItem {
+  background: black;
+  padding: 15px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal-detail .item-modal .action .addCartItem:hover {
+  background-color: #ba933e;
+}
+
+.details {
+  padding: 60px 0;
+}
+.details .details__left {
+  overflow: hidden;
+  /* margin-right: 50px; */
+}
+.details .details__left .item {
+  align-items: end;
+  display: flex;
+  justify-content: center;
+}
+.details .details__left img {
+  display: block;
+  width: 60%;
+  height: 40%;
+  border: 1px solid #ccc;
+}
+.details .details__right .heading {
+  font-size: 34px;
+}
+.details .details__right .rate {
+  margin: 20px 0;
+}
+.details .details__right .rate i {
+  color: rgb(212, 164, 7);
+  font-size: 14px;
+}
+.details .details__right .price {
+  font-size: 20px;
+  color: #666666;
+}
+
+.details .details__right .description-products {
+  margin: 20px 0;
+  line-height: 30px;
+  color: #444444;
+}
+.details .details__right .action {
+  margin-bottom: 40px;
+}
+.details .details__right .action .control-item {
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  display: inline-flex;
+  padding: 0px 5px;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+.details .details__right .action .control-item input {
+  background-color: transparent;
+  width: 40px;
+  text-align: center;
+  height: 50px;
+}
+.details .details__right .action .control-item a {
+  align-items: center;
+  display: flex;
+}
+.details .details__right .action .control-item a:hover {
+  color: #ba933e;
+}
+
+.details .details__right .action .addCartItem {
+  background: black;
+  padding: 15px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.details .details__right .action .addCartItem:hover {
+  background-color: #ba933e;
+}
+
+.description .heading-des {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.description .heading-des h3 {
+  color: #1a1a1a;
+  font-size: 18px;
+  padding: 0 0 5px;
+  font-weight: 700;
+  border-bottom: 2px solid #ba933e;
+}
+.description .heading-des::after,
+.description .heading-des::before {
+  content: "";
+  height: 1px;
+  background: #ccc;
+  width: 40%;
+  display: block;
+}
+.description .content {
+  margin-top: 20px;
+  word-wrap: break-word;
+  color: #444444;
+  line-height: 30px;
+}
+
+.top {
+  padding: 10px 0px;
+  background: #f5f5f5;
+}
+.top .container {
+  width: 90%;
+  max-width: 1411px;
+  margin: 0 auto;
+}
+.top .nav-top li a {
+  display: flex;
+  padding: 0 5px;
+}
+.top .nav-top li a span {
+  margin: 0 5px;
+}
+.top .nav-top li a.active {
+  color: #999999;
+}
