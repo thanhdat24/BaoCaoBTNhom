@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubix-Fashion</title>
+
+    <!-- FONT  -->
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- ICON BS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- RESET CSS  -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- HEADER CSS -->
+    <link rel="stylesheet" href="./css/header.css">
+    <!-- HEADER CSS -->
+    <link rel="stylesheet" href="./css/footer.css">
+    <!-- BLOG CSS -->
+    <link rel="stylesheet" href="./css/blog.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./css/template.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- HEADER  -->
+        <header class="header">
+            <div class="header__first">
+                <div class="top-bar">
+                    <ul class="top-bar__first">
+                        <li><i class="bi bi-telephone-outbound"></i> (+84) 123456789</li>
+                        <li><i class="far fa-envelope"></i>nhom4_CT18810@ctu.edu.com</li>
+                    </ul>
+                    <ul class="top-bar__second">
+                        <li>Giao hàng miễn phí với các đơn hàng từ 1 triệu đồng</li>
+                        <li>Mua ngay!</li>
+                    </ul>
+                    <ul class="top-bar__third">
+                        <li class="top-bar__third--region">
+                            <a href="">Vietnamese <i class="icon-arrow fa fa-angle-down"></i></a>
+                            <ul class="menu-English">
+                                <li><a href="">English</a></li>
+                                <li><a href="">French</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-bar__third--price"><a href="">VND</a>
+                        </li>
+                        <div class="top-bar__third--icon">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"> <i class="fab fa-twitter"></i></a>
+                            <a href="#"> <i class="fab fa-youtube"></i></a>
+                            <a href="#"> <i class="fab fa-pinterest"></i></a>
+                            <a href="#"> <i class="fa fa-envelope"></i></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-header">
+                <div class="top-nav">
+                    <div class="menu-ipad-mobile">
+                        <i class="bi bi-list"></i>
+                    </div>
+                    <img class="top-nav__img" src="./img/logo/logo_x2.png">
+                    <ul class="top-nav__first">
+                        <li><a href="template.html">Trang chủ</a></li>
+                        <li class="top-nav__first__Shop"><a href="products.html">Cửa hàng <i
+                                    class="icon-arrow fa fa-angle-down"></i></a>
+                            <ul class="menu-Shop">
+                                <li><a href="wishlist.html">Danh sách yêu thích</a></li>
+                                <li><a href="checkout.html">Thủ tục thanh toán</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-nav__first__Page">
+                            <a href="#">Trang <i class="icon-arrow fa fa-angle-down"></i></a>
+                            <ul class="menu-Page">
+                                <li><a href="#">Về chúng tôi</a></li>
+                                <li><a href="#">Liên hệ</a></li>
+                                <li><a href="wishlist.html">Danh sách yêu thích</a></li>
+                                <li><a href="login.html">Tài khoản của tôi</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="blog.html">Bài viết </a>
+                        </li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                    <div class="top-nav__second">
+                        <div class="top-nav__second--login-regis">
+                            <a href="./login.html"><i class="far fa-user"></i> Đăng nhập</a>/<a
+                                class="top-nav__second--regis" href="#">Đăng ký</a>
+                        </div>
+                        <ul class="top-nav__second__icon">
+                            <li class="item addWishlist"><a href="wishlist.html"><i class="bi bi-heart"></i></a><span
+                                    class="before" id="before1">0</span>
+                            </li>
+                            <li class="item card-item"> <a data-bs-toggle="modal" data-bs-target="#cardModal"><i
+                                        class="bi bi-handbag"></i></a><span class="before" id="before">0</span></li>
+                            <li><a><i class="bi bi-search"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Modal Card-->
+        <div class="modal fade " id="cardModal" tabindex="-1" aria-labelledby="modalCard" aria-hidden="true">
+            <div style="min-width: 800px;" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCard">Giỏ hàng</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr style="text-align:center">
+                                    <th scope="col">Hình ảnh</th>
+                                    <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Số lượng</th>
+                                    <th scope="col">Đơn giá</th>
+                                    <th scope="col">Thành tiền</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="mini-cart-product1">
+
+                            </tbody>
+                            <tfoot>
+                                <tr class="total text-center">
+                                    <td colSpan="3"></td>
+                                    <td class="fs-5">Tổng tiền</td>
+                                    <td class="sub-total fs-5" id="sub-total1"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <div class="products-cart">
+                            <div class="mini-cart align-items-center">
+                                <div class="mini-cart-list">
+                                    <ul id="mini-cart-product2">
+
+                                    </ul>
+                                </div>
+
+                                <div class="mini-cart-bottom">
+                                    <div class="total d-flex align-items-center justify-content-between ms-4">
+                                        <strong>
+                                            Tổng tiền:
+                                        </strong>
+
+                                        <div class="sub-total" id="sub-total2">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-light btn-disable">Xem giỏ hàng</a>
+                        <a href="checkout.html" type="button" class="btn btn-primary btn-primary">Đặt hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Detail-->
+        <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered " style="max-width: 900px">
+                <div class="modal-content modal-detail" id="modal-detail">
+
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <!-- SUBSCRIBE -->
+            <section class="subscribe"></section>
+            <!-- BLOG -->
+            <section class="blog">
+                <div class="blog-heading">
+                    <h3><b>Tin Tức Mới Nhất</b></h3>
+                    <span>Mẹo hay cho phái đẹp</span>
+                </div>
+                <div id="card" class="row"></div>
+            </section>
+        </main>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="contaniner">
+                <div class="row">
+                    <div class="col">
+                        <img src="./img/logo/logo-footer-rubix.png " alt="logo_x2">
+                        <section>
+                            <a class="btn-floating text-white" href="#!" role="button">
+                                <i class="fab fa-facebook-f"></i></a>
+
+                            <a class="btn-floating m-1 text-white" href="#!" role="button">
+                                <i class="fab fa-twitter"></i></a>
+
+                            <a class="btn-floating m-1 text-white" href="#!" role="button">
+                                <i class="fab fa-youtube"></i></a>
+
+                            <a class="btn-floating m-1 text-white" href="#!" role="button">
+                                <i class="fab fa-whatsapp"></i></a>
+                        </section>
+                    </div>
+                    <div class="col">
+                        <h4>Chăm sóc khách hàng</h4>
+                        <ul>
+                            <li><a href="#" class="text-secondary">Tài khoản của tôi</a></li>
+                            <li><a href="#" class="text-secondary">Theo dõi đơn hàng của tôi</a></li>
+                            <li><a href="#" class="text-secondary">FAOs</a></li>
+                            <li><a href="#" class="text-secondary">Phương thức thanh toán</a></li>
+                            <li><a href="#" class="text-secondary">Hướng dẫn vận chuyển</a></li>
+                            <li><a href="#" class="text-secondary">Hỗ trợ sản phẩm</a></li>
+                            <li><a href="#" class="text-secondary">Thẻ quà tặng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Xem thêm về Rubix</h4>
+                        <div class="sci">
+                            <ul>
+                                <li><a href="#" class="text-secondary">Giới thiệu Rubix</a></li>
+                                <li><a href="#" class="text-secondary">Đảm bảo của chúng tooi</a></li>
+                                <li><a href="#" class="text-secondary">Các điều khoản và điều kiện</a></li>
+                                <li><a href="#" class="text-secondary">Danh sách yêu thích</a></li>
+                                <li><a href="#" class="text-secondary">Chính sách hoàn trả</a></li>
+                                <li><a href="#" class="text-secondary">Giao hàng và trả hàng</a></li>
+                                <li><a href="#" class="text-secondary">Sơ đồ trang web</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h4 class="col-end">Liên Hệ</h4>
+                        <ul>
+                            <li><a href="#" class="text-secondary"><i class="fa fa-phone" aria-hidden="true"></i>&ensp;
+                                    (+84) 123456789</a></li>
+                            <li><a href="#" class="text-secondary"><i class="fa fa-envelope-o"
+                                        aria-hidden="true"></i>nhom4_CT18810@ctu.edu.com</a></li>
+                        </ul>
+                        <h4 class="col-end mt-3">Địa chỉ</h4>
+                        <ul class="map">
+                            <li><a href="#" class="text-secondary"><i class="fa fa-map-marker"
+                                        aria-hidden="true"></i>&ensp;
+                                    Đường 3/2 <br>
+                                    Q.Ninh Kiều, TP.Cần Thơ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                        <a href="#" class="up-arrow">
+                            <i class="fa fa-chevron-up "></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col " style="display: flex; align-items: center">
+                    <p class="text-secondary mb-0">Copyright &copy;
+                        <a href="#" class="text-white">Rubix</a> all rights reserved.
+                    </p>
+
+                </div>
+                <div class="col" style="display: flex; align-items: center;justify-content: center;">
+                    <img src="./img/icon/payment.png" alt="payment">
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- BS5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- MAIN JS -->
+    <script src="./js/main.js"></script>
+    <script src="./js/details.js"></script>
+    <script src="./js/owlcarousel.js"></script>
+</body>
+
+
+
+</html>
