@@ -3,7 +3,17 @@
 @Created date: 12/13/2021  */
 
 /* owl-carousel */
-.slider .owl-carousel .owl-nav {
+.carousel-indicators--config [data-bs-target] {
+  background-color: #ba933e;
+  opacity: 1;
+}
+.carousel-indicators--config button {
+  cursor: pointer;
+}
+.carousel-indicators--config [data-bs-target].active {
+  background-color: #fff;
+}
+.carousel-button {
   position: absolute;
   transition: all 0.4s;
   top: 50%;
@@ -15,10 +25,11 @@
   justify-content: space-between;
   width: 100%;
 }
-.slider .owl-carousel:hover .owl-nav {
+.carousel:hover .carousel-button {
   opacity: 1;
 }
-.slider .owl-carousel .owl-nav button {
+.carousel-control-prev,
+.carousel-control-next {
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -29,43 +40,34 @@
   position: absolute;
   transition: 0.4s;
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s;
 }
-
-.slider .owl-carousel .owl-nav button.owl-prev {
-  left: 20px;
-}
-.slider .owl-carousel .owl-nav button.owl-next {
-  right: 20px;
-  left: auto;
-}
-
-.slider .owl-carousel .owl-nav button.owl-prev,
-.slider .owl-carousel .owl-nav button.owl-next {
-  background: rgba(#fff, 0.8);
-  color: #1a1a1a;
-}
-.slider .owl-carousel .owl-nav button.owl-prev:hover,
-.slider .owl-carousel .owl-nav button.owl-next:hover {
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
   color: #fff;
   background: #ba933e;
 }
-.owl-dots {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -100%);
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  transform: translateY(-25px);
+  background-image: none;
+  transition: all 0.3s;
+}
+.carousel-control-next-icon:hover:after,
+.carousel-control-prev-icon:hover:after {
+  color: #fff;
+}
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: #1a1a1a;
+  transition: all 0.3s;
 }
 
-.slider .owl-carousel .owl-dots .owl-dot span {
-  background: #ba933e;
-  width: 12px;
-  height: 12px;
-}
-
-.slider .owl-carousel .owl-dots .owl-dot.active span {
-  box-sizing: content-box;
-  background: none;
-  border: 2px solid #ba933e;
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: #1a1a1a;
+  transition: all 0.3s;
 }

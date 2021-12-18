@@ -2,7 +2,7 @@
 /* css index */
 
 /* start top-bar */
-@-webkit-keyframes down {
+@keyframes down {
   from {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
@@ -21,6 +21,11 @@ header .main-header.active {
   -webkit-animation: down 1s forwards;
   animation: down 1s forwards;
 }
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 
 .header__first {
   background-color: whitesmoke;
@@ -34,7 +39,9 @@ header .main-header.active {
   width: 97%;
   margin: 0 auto;
 }
-
+.menu-ipad-mobile {
+  display: none;
+}
 .top-bar__first,
 .top-bar__second,
 .top-bar__third {
@@ -49,7 +56,6 @@ header .main-header.active {
   color: #fff;
   font-weight: 700;
   padding: 3px 8px;
-  margin-left: 8px;
   font-size: 14px;
   cursor: pointer;
 }
@@ -61,6 +67,9 @@ header .main-header.active {
 }
 .top-bar__third li {
   padding: 0 10px;
+}
+.top-bar__first li:hover {
+  color: #ba933e;
 }
 .top-bar__first li i {
   margin-right: 5px;
@@ -119,9 +128,10 @@ header .main-header.active {
   display: block;
   color: #000;
   text-decoration: none;
-  padding-bottom: 5px;
 }
-
+.menu-English li:first-child {
+  margin-bottom: 8px;
+}
 .menu-English li a {
   text-align: left;
 }
@@ -152,7 +162,9 @@ header .main-header.active {
   width: 97%;
   text-align: center;
 }
-
+.top-nav__first {
+  margin-left: 70px;
+}
 .top-nav__first li {
   display: inline-block;
 }
@@ -169,8 +181,8 @@ header .main-header.active {
   cursor: pointer;
 }
 
-.menu-Blog,
-.menu-Page {
+.menu-Page,
+.menu-Shop {
   display: none;
   position: absolute;
   background-color: white;
@@ -178,26 +190,26 @@ header .main-header.active {
   box-shadow: 0px 6px 15px rgb(0 0 0 / 10%);
 }
 
-.menu-Blog li,
-.menu-Page li {
+.menu-Page li,
+.menu-Shop li {
   display: block;
   color: #000;
   text-decoration: none;
 }
 
-.top-nav__first__Blog ul,
-.top-nav__first__Page ul {
+.top-nav__first__Page ul,
+.top-nav__first__Shop {
   margin-bottom: 0;
   padding-left: 0;
 }
-.top-nav__first__Blog:hover .menu-Blog,
-.top-nav__first__Page:hover .menu-Page {
+.top-nav__first__Page:hover .menu-Page,
+.top-nav__first__Shop:hover .menu-Shop {
   display: block;
 }
 
 .top-nav__first > li:hover > a,
-.top-nav__first .menu-Blog li:hover a,
-.top-nav__first .menu-Page li:hover a {
+.top-nav__first .menu-Page li:hover a,
+.top-nav__first .menu-Shop li:hover a {
   color: darkgoldenrod;
 }
 
@@ -224,7 +236,7 @@ header .main-header.active {
 .top-nav__second a {
   color: #000;
   text-decoration: none;
-  padding: 0 10px;
+  padding: 0 8px;
 }
 .top-nav__second__icon {
   margin-left: 10px;
@@ -299,4 +311,111 @@ header .main-header.active {
   margin-bottom: 25px;
 }
 
-/* RESPONSIVE */
+/* responsive iPad */
+@media (max-width: 1200px) {
+  .top-bar__first,
+  .top-bar__third,
+  .top-nav__first,
+  .top-nav__second--login-regis {
+    display: none;
+  }
+
+  .top-nav {
+    margin: 12px auto;
+  }
+
+  .top-nav__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 140px;
+  }
+
+  .top-bar__second {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .top-nav__first li {
+    display: block;
+  }
+
+  .menu-ipad-mobile {
+    display: block;
+    margin-left: 30px;
+    margin-right: 70px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .main-text {
+    top: 50px;
+    left: 5px;
+  }
+
+  .main-text h1 {
+    font-size: 12px;
+  }
+
+  .main-text h2 {
+    font-size: 24px;
+  }
+
+  .main-text__ss {
+    padding: 2px 10px;
+  }
+
+  .top-bar__second li,
+  .top-bar__second li:nth-child(2) {
+    font-size: 12px;
+  }
+}
+
+/* responsive Mobile */
+@media (max-width: 570px) {
+  .top-bar {
+    display: none;
+  }
+
+  .top-nav {
+    margin: 5px auto;
+  }
+
+  .menu-ipad-mobile {
+    font-size: 16px;
+    margin-left: 30px;
+    margin-right: 0px;
+  }
+
+  .top-nav__second__icon {
+    font-size: 12px;
+  }
+
+  .top-nav__img {
+    width: 110px;
+  }
+  .top-nav__second__icon li:nth-child(1),
+  .top-nav__second__icon li:nth-child(3) {
+    display: none;
+  }
+
+  .main-text {
+    top: 20px;
+    left: 2px;
+  }
+
+  .main-text h1 {
+    font-size: 6px;
+  }
+
+  .main-text h2 {
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .main-text__ss {
+    padding: 1px 4px;
+    font-size: 8px;
+  }
+}

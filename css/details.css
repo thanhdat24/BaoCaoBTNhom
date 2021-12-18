@@ -113,6 +113,7 @@
 }
 .details .details__right .heading {
   font-size: 34px;
+  font-weight: bold;
 }
 .details .details__right .rate {
   margin: 20px 0;
@@ -213,4 +214,29 @@
 }
 .top .nav-top li a.active {
   color: #999999;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 992px) {
+  .details__right .heading {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .top .nav-top li a {
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+  .description .heading-des {
+    font-size: 17px;
+  }
+  .description .content {
+    font-size: 15px;
+  }
+  .top .nav-top li a {
+    padding: 0 3px;
+  }
+  .top .nav-top li a span {
+    margin: 0 2px;
+  }
 }

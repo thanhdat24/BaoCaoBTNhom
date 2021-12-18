@@ -2,31 +2,6 @@ var miniCart = parseLocal("dataCart") || [];
 var wishList = parseLocal("WishListProduct") || [];
 
 window.addEventListener("load", function () {
-  $("#main-slider").owlCarousel({
-    loop: true,
-    autoplay: true,
-    autoplayTimeout: 4000,
-    margin: 20,
-    dots: true,
-    items: 1,
-    navText: [
-      `<i class="fas fa-chevron-left"></i>`,
-      `<i class="fas fa-chevron-right"></i>`,
-    ],
-    animateIn: "fadeIn",
-    animateOut: "fadeOut",
-    responsive: {
-      0: {
-        nav: false,
-      },
-      992: {
-        nav: false,
-      },
-      1024: {
-        nav: true,
-      },
-    },
-  });
   renderProduct1(products);
   renderProduct2(bestSale);
 
@@ -177,7 +152,7 @@ var products = [
     type: "Womens",
   },
 ];
-
+// Array ảnh
 var listImgItem = [
   {
     id: 1,
@@ -236,6 +211,39 @@ var listImgItem = [
     img: ["./img/product/6_1-copy-600x745.jpg"],
   },
 ];
+
+// Array blog
+const blogs = [
+  {
+    id: "b1",
+    img: "8-500x321.jpg",
+    head: "Lưu ý mặc đẹp nơi công sở",
+    des: "Chi những khoản tiền lớn để sắm trang phục đắt đỏ chưa chắc đã đảm bảo cho sự xuất hiện hoàn hảo của bạn ở...",
+    link: "https://blueskytechco.com/rubix/6-things-to-note-to-wear-well-in-the-workplace/",
+  },
+  {
+    id: "b2",
+    img: "7-500x321.jpg",
+    head: "5 cách phối đồ cho áo tay phồng",
+    des: "Bạn là một cô gái yêu thích phong cách nhẹ nhàng, nữ tính, “bánh mì đất” và bạn yêu thích những tông màu pastel …",
+    link: "https://blueskytechco.com/rubix/6-things-to-note-to-wear-well-in-the-workplace/",
+  },
+  {
+    id: "b3",
+    img: "6-500x321.jpg",
+    head: "Cách mix đồ với áo trễ vai",
+    des: "Áo trễ vai là một món đồ không thể thiếu trong tủ đồ của mọi cô gái. Một item vừa đáng yêu, vừa sexy nhưng cũng...",
+    link: "https://blueskytechco.com/rubix/6-things-to-note-to-wear-well-in-the-workplace/",
+  },
+  {
+    id: "b4",
+    img: "5-500x321.jpg",
+    head: "7 cách mix đồ với áo trễ vai",
+    des: "Quần sooc, váy, khuyên tai, mũ,… là một trong những cách mặc áo trễ vai mà bất cứ cô gái nào cũng có thể… …",
+    link: "https://blueskytechco.com/rubix/6-things-to-note-to-wear-well-in-the-workplace/",
+  },
+];
+
 const bestSale = products.filter((item) => item.isBest);
 
 function renderProduct1(data) {
@@ -244,7 +252,7 @@ function renderProduct1(data) {
   for (let [index, item] of data.entries()) {
     if (index < 8) {
       productItem += `
-       <div class="col-sm-6 col-md-4 col-xl-3 item">
+       <div class="col-6 col-md-4 col-xl-3 item">
                 <div class="product" data-id=${item.id}  id="dataID">
                     <div class="img">
                         <a href="#">
@@ -262,9 +270,18 @@ function renderProduct1(data) {
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
                             <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                            <li onclick="clickQuickView(${
+                             <li onclick="clickQuickView(${
+                               item.id
+                             },event)" class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
+                        </ul>
+                         <ul class="action action2">
+                            <li onclick="clickAddWishList(${
                               item.id
-                            },event)"  class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
+                            },event)" class="wishlist"><i class="far fa-heart"></i><span></span>
+                            </li>
+                            <li onclick="clickAddToCard(${
+                              item.id
+                            },event)" class="addCartItem"><i class="bi bi-handbag"></i></li>
                         </ul>
                     </div>
 
@@ -290,8 +307,8 @@ function renderProduct2(data) {
   for (let [index, item] of data.entries()) {
     if (index < 8) {
       productItem += `
-        <div class="col-sm-6 col-md-4 col-xl-3 item">
-                <div class="product" data-id=${item.id} id="dataID">
+        <div class="col-6 col-md-4 col-xl-3 item">
+                <div class="product" data-id=${item.id}  id="dataID">
                     <div class="img">
                         <a href="#">
                             <img src="${item.img}" alt="">
@@ -308,16 +325,25 @@ function renderProduct2(data) {
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
                             <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                            <li onclick="clickQuickView(${
+                             <li onclick="clickQuickView(${
+                               item.id
+                             },event)" class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
+                        </ul>
+                         <ul class="action action2">
+                            <li onclick="clickAddWishList(${
                               item.id
-                            },event)"  class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
+                            },event)" class="wishlist"><i class="far fa-heart"></i><span></span>
+                            </li>
+                            <li onclick="clickAddToCard(${
+                              item.id
+                            },event)" class="addCartItem"><i class="bi bi-handbag"></i></li>
                         </ul>
                     </div>
 
                     <div class="content">
                         <h4>${item.name}</h4>
                         <div class="price">
-                            ${(item.price * 1).toLocaleString("vi-VN")}
+                          đ ${(item.price * 1).toLocaleString("vi-VN")}
                         </div>
                     </div>
                 </div>

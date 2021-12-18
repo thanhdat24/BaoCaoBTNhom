@@ -59,9 +59,9 @@ function renderContentDetails(id) {
 
     <div class="action d-flex a-center" data-id=${item.id}>
         <div class="control-item d-flex a-center">
-            <a class="dash-1" href=""><i class="bi bi-dash"></i></a>
+            <a class="dash-1"><i class="bi bi-dash"></i></a>
             <input type="text" class="InputAmountProduct" value="1">
-            <a class="plus-1" href=""><i class="bi bi-plus"></i></a>
+            <a class="plus-1" ><i class="bi bi-plus"></i></a>
         </div>
         <button  class="btn a-center d-flex addCartItem" onclick="clickAddToCardDetails(${
           item.id

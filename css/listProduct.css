@@ -87,6 +87,13 @@
 .item .action {
   position: absolute;
 }
+.item .action2 {
+  display: none;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
 .item .action li {
   position: relative;
   width: 40px;
@@ -147,4 +154,23 @@
 .action1 li:hover span {
   transform: translateY(-50%) translateX(0%);
   opacity: 1;
+}
+@media screen and (max-width: 1200px) {
+  .item .product:hover button.btn {
+    opacity: 0;
+  }
+  .item .action1 {
+    display: none;
+  }
+  .item .action2 {
+    display: flex;
+  }
+  .item .product .action2 .addCartItem {
+    transform: none;
+    opacity: 1;
+  }
+  .item .product:hover .addCartItem {
+    /* opacity: 0; */
+    transform: none;
+  }
 }

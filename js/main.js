@@ -1,11 +1,6 @@
 window.addEventListener("load", function (e) {
   e.preventDefault();
-  // renderProductCate(products);
 
-  // // thêm sản phẩm có id vào trong mảng
-  // addWishList(dataID);
-  // addMiniCart(dataID);
-  // render lại giỏ hàng
   renderMiniCart(miniCart);
   renderWishList(wishList);
 });
@@ -18,7 +13,7 @@ window.addEventListener("load", function (e) {
     let productItem = "";
     for (let item of data) {
       productItem += `
-            <div class="col-sm-6 col-lg-4 col-xl-4 item">
+            <div class="col-6 col-lg-4 col-xl-4 item">
                 <div class="product" data-id=${item.id} id="dataID">
                     <div class="img">
                         <a href="#">
@@ -36,7 +31,18 @@ window.addEventListener("load", function (e) {
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
                             <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                            <li class="detail" ><i class="fas fa-eye"></i><span>View Details</span></li>
+                            <li onclick="clickQuickView(${
+                              item.id
+                            },event)" class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye" ></i><span>View Details</span></li>
+                        </ul>
+                         <ul class="action action2">
+                            <li onclick="clickAddWishList(${
+                              item.id
+                            },event)" class="wishlist"><i class="far fa-heart"></i><span></span>
+                            </li>
+                            <li onclick="clickAddToCard(${
+                              item.id
+                            },event)" class="addCartItem"><i class="bi bi-handbag"></i></li>
                         </ul>
                     </div>
 
@@ -113,18 +119,21 @@ window.addEventListener("load", function (e) {
 });
 
 function renderMiniCart(data) {
-  let mini_cart = getELE("mini-cart-product");
-  let subTotal = getELE("sub-total");
+  let mini_cart_Desktop = getELE("mini-cart-product1");
+  let mini_cart_Mobile = getELE("mini-cart-product2");
+
+  let subTotalDesktop = getELE("sub-total1");
+  let subTotalMobile = getELE("sub-total2");
+
   let amount = getELE("before");
   let sumPrice = 0;
   let sumQuantity = 0;
-  let content = "";
+  let content1 = "";
+  let content2 = "";
   for (let item of data) {
-    content += `
-      <tr data-id=${item.id} style="text-align:center">
-        <td><img style="width:90px; height="90px" src="${item.img}" alt="${
-      item.name
-    }"/></td>
+    content1 += `
+      <tr class="modal-desktop" data-id=${item.id} style="text-align:center">
+        <td><img style="width:90px" src="${item.img}" alt="${item.name}"/></td>
         <td>${item.name}</td>
         <td>${item.quantity}</td>
         <td>${(item.price * 1).toLocaleString("vi-VN")}</td>
@@ -132,22 +141,44 @@ function renderMiniCart(data) {
         <td><button type="button" class="btn btn-danger" onclick="removeItemMiniCart(${
           item.id
         })">Xoá</button></td>
-    </tr>`;
+    </tr>
+  
+    `;
+    content2 += `
+            <li class="modal-mobile d-flex" class="d-flex" data-id=${item.id}>
+                <img src="${item.img}" alt="">
+            <div class="quantity">
+               <a href="#">${item.name}</a>
+                <p> <span class="countEle"> ${item.quantity} </span> × ${(
+      item.price * 1
+    ).toLocaleString("vi-VN")}</p>
+            </div>
+           <button class="mobile-removeCart" onclick="removeItemMiniCart(${
+             item.id
+           })"><i class="bi bi-trash-fill"></i></button>
+      </li>
+        `;
     sumPrice += item.quantity * item.price;
     sumQuantity += item.quantity;
   }
 
   // render item content
-  if (mini_cart !== null) {
-    mini_cart.innerHTML = content;
+  if (mini_cart_Desktop !== null) {
+    mini_cart_Desktop.innerHTML = content1;
+  }
+  if (mini_cart_Mobile !== null) {
+    mini_cart_Mobile.innerHTML = content2;
   }
 
   // render tổng tiền trong miniCart
-  if (subTotal !== null) {
-    subTotal.innerHTML = sumPrice.toLocaleString("vi-VN");
+  if (subTotalDesktop !== null) {
+    subTotalDesktop.innerHTML = sumPrice.toLocaleString("vi-VN");
+  }
+  if (subTotalMobile !== null) {
+    subTotalMobile.innerHTML = sumPrice.toLocaleString("vi-VN");
   }
   // render tổng số lượng  sản phẩm
-  if (mini_cart !== null) {
+  if (amount !== null) {
     amount.innerHTML = sumQuantity;
   }
 }
@@ -229,22 +260,31 @@ function renderWishList(data) {
          <td><button type="button" class="btn btn-danger" onclick="removeItemWishLish(${
            item.id
          })">Xoá</button></td>
-        <td><img style="width:90px; height="90px" src="${item.img}" alt="${
-      item.name
-    }"/></td>
+          <td ><button class="mobile-remove__ItemWishLish" onclick="removeItemWishLish(${
+            item.id
+          })"><i class="bi bi-trash-fill"></i></button></td>
+        <td><img src="${item.img}" alt="${item.name}"/></td>
         <td>${item.name}</td>
         <td>${(item.price * 1).toLocaleString("vi-VN")}</td>
         <td><span class="stocked">Trong kho</span></td>
+         <td>
+              <button class="mobile-add__ItemWishLish" onclick="clickAddToCardWishList(${
+                item.id
+              },event)"><i class="bi bi-plus-circle-fill"></i></button>
+         </td>  
          <td>
               <button class ="btn btn-primary" onclick="clickAddToCardWishList(${
                 item.id
               },event)">Add to card</button>
          </td>
-
+             
     </tr>`;
   }
   // render tổng số lượng  sản phẩm
-  amount.innerHTML = wishList.length;
+  if (amount !== null) {
+    amount.innerHTML = wishList.length;
+  }
+
   // render item content
   if (wish_list !== null) {
     wish_list.innerHTML = content;
@@ -436,9 +476,9 @@ function renderModalContentQuickView(id) {
           </p>
           <div class="action d-flex align-items-center" data-id = ${data.id}>
                 <div class="control-item d-flex align-items-center">
-                    <a class ="dash-1" href=""><i class="bi bi-dash"></i></a>
+                    <a class ="dash-1"><i class="bi bi-dash"></i></a>
                     <input type="text"class="InputAmountProduct" value="1">
-                    <a class ="plus-1" href=""><i class="bi bi-plus"></i></a>
+                    <a class ="plus-1"><i class="bi bi-plus"></i></a>
                 </div>
                 <button  class="btn align-items-center d-flex addCartItem" onclick="clickAddToCard(${
                   data.id
@@ -467,3 +507,27 @@ clickQuickView = (dataID, e) => {
 
   renderModalContentQuickView(dataID);
 };
+
+// BLOG
+window.addEventListener("load", function (e) {
+  renderBlog();
+});
+function renderBlog() {
+  let content = "";
+  for (let i = 0; i < blogs.length; i++) {
+    content += `
+  <div class="col-md-4">
+    <img class="card-img-top flash" src="./img/banner/${blogs[i].img}" alt="Card image cap">
+    <div class="card-body">
+      <p><b class="text-warning">Admin. Ngày 13 tháng 12, 2021</b></p>
+      <p><b class="card-title"><a href="${blogs[i].link}">${blogs[i].head}</a></b></p>
+      <p class="text">${blogs[i].des}</p>
+        <a href = "${blogs[i].link}"><button class="read-more-btn border border m-2">Read more</button></a>
+    </div>
+  </div>
+  `;
+  }
+  if (document.querySelector("#card") !== null) {
+    document.querySelector("#card").innerHTML = content;
+  }
+}
