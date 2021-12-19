@@ -98,6 +98,14 @@
   background-color: #ba933e;
   color: white;
 }
+.checkout__listtotal td:nth-child(1){
+  font-weight: 600;
+  font-size: 16px;
+}
+.checkout__listtotal td:nth-child(2){
+  font-weight: 600;
+  font-size: 16px;
+}
 .checkout__total td:nth-child(1) {
   font-weight: 700;
   font-size: 18px;

@@ -48,16 +48,16 @@ function renderContentDetails(id) {
         (1 customer review)
     </div>
     <p class="price">
-        $${(item.price * 1).toLocaleString("vi-VN")}
+        ${(item.price * 1).toLocaleString("vi-VN")} đ
     </p>
     <p class="description-products">
-        Tailored line. Wool mix fabric. Long design. Long buttoned sleeve. Lapel with notch. <br>
-        Back slit.Two pockets with flaps on the front. Button up. Inner lining. Inner pocket.<br>
-        Back length 95.0 cm.<br>
-        Summer tops for women<br>
-        Cheetah kimonos ,beach cover ups<br>
-        Lightweight chiffon casual shirts<br>
-        Open front outwear,short sleeve blouse.
+        Dòng phù hợp. Vải pha len. Thiết kế dài. Tay áo dài cài cúc. Ve áo có khía. <br>
+        Khe lưng. Hai túi có nắp ở phía trước. Nút lên. Lớp lót bên trong. Túi trong<br>
+        Chiều dài lưng 95.0 cm.<br>
+        Áo mùa hè cho phụ nữ<br>
+        Cheetah kimono, che bãi biển<br>
+        Áo sơ mi vải voan nhẹ<br>
+        Áo khoác ngoài hở phía trước, áo cánh ngắn tay.
     </p>
 
     <div class="action d-flex a-center" data-id=${item.id}>

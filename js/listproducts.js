@@ -295,7 +295,7 @@ function renderProduct1(data) {
                     <div class="content">
                         <h4>${item.name}</h4>
                         <div class="price">
-                          đ ${(item.price * 1).toLocaleString("vi-VN")}
+                           ${(item.price * 1).toLocaleString("vi-VN")} đ
                         </div>
                     </div>
                 </div>
@@ -350,7 +350,7 @@ function renderProduct2(data) {
                     <div class="content">
                         <h4>${item.name}</h4>
                         <div class="price">
-                          đ ${(item.price * 1).toLocaleString("vi-VN")}
+                          ${(item.price * 1).toLocaleString("vi-VN")} đ
                         </div>
                     </div>
                 </div>

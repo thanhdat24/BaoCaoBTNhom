@@ -53,7 +53,7 @@ window.addEventListener("load", function (e) {
                     <div class="content">
                         <h4>${item.name}</h4>
                         <div class="price">
-                            đ ${(item.price * 1).toLocaleString()}
+                            ${(item.price * 1).toLocaleString()} đ
                         </div>
                     </div>
                 </div>
@@ -139,10 +139,10 @@ function renderMiniCart(data) {
     content1 += `
       <tr class="modal-desktop" data-id=${item.id} style="text-align:center">
         <td><img style="width:90px" src="${item.img}" alt="${item.name}"/></td>
-        <td>${item.name}</td>
+        <td><b>${item.name}</b></td>
         <td>${item.quantity}</td>
-        <td>${(item.price * 1).toLocaleString("vi-VN")}</td>
-        <td>${(item.price * item.quantity).toLocaleString("vi-VN")}</td>
+        <td>${(item.price * 1).toLocaleString("vi-VN")} đ</td>
+        <td>${(item.price * item.quantity).toLocaleString("vi-VN")} đ</td>
         <td><button type="button" class="btn btn-danger" onclick="removeItemMiniCart(${
           item.id
         })">Xoá</button></td>
@@ -156,7 +156,7 @@ function renderMiniCart(data) {
                <a href="#">${item.name}</a>
                 <p> <span class="countEle"> ${item.quantity} </span> × ${(
       item.price * 1
-    ).toLocaleString("vi-VN")}</p>
+    ).toLocaleString("vi-VN")} đ</p>
             </div>
            <button class="mobile-removeCart" onclick="removeItemMiniCart(${
              item.id
@@ -179,7 +179,7 @@ function renderMiniCart(data) {
 
   // render tổng tiền trong miniCart dạng desktop
   if (subTotalDesktop !== null) {
-    subTotalDesktop.innerHTML = sumPrice.toLocaleString("vi-VN");
+    subTotalDesktop.innerHTML = sumPrice.toLocaleString("vi-VN") +" đ";
   }
   // render tổng tiền trong miniCart dạng mobile
   if (subTotalMobile !== null) {
@@ -275,8 +275,8 @@ function renderWishList(data) {
             item.id
           })"><i class="bi bi-trash-fill"></i></button></td>
         <td><img src="${item.img}" alt="${item.name}"/></td>
-        <td>${item.name}</td>
-        <td>${(item.price * 1).toLocaleString("vi-VN")}</td>
+        <td><b>${item.name}</b></td>
+        <td>${(item.price * 1).toLocaleString("vi-VN")} đ</td>
         <td><span class="stocked">Trong kho</span></td>
          <td>
               <button class="mobile-add__ItemWishLish" onclick="clickAddToCardWishList(${
@@ -387,7 +387,8 @@ window.addEventListener("load", function () {
 
 function renderCheckOut(data = []) {
   let ListCheckOut = getELE("ListCheckOut");
-  let subTotal = getELE("checkout__total-sub");
+  let subTotal = getELE("checkout__subtotal");
+  let Total = getELE("checkout__total");
   let sumPrice = 0;
   let content = "";
   for (let item of data) {
@@ -396,7 +397,7 @@ function renderCheckOut(data = []) {
         <td>${item.name} × ${item.quantity}</td>
         <td style="text-align:end">${(
           item.price * item.quantity
-        ).toLocaleString("vi-VN")}</td>
+        ).toLocaleString("vi-VN")} đ</td>
     </tr>`;
     sumPrice += item.quantity * item.price;
   }
@@ -405,9 +406,13 @@ function renderCheckOut(data = []) {
     ListCheckOut.innerHTML = content;
   }
 
-  // render tổng tiền trong miniCart
+  // render tổng tiền trong checkout
   if (subTotal !== null) {
-    subTotal.innerHTML = sumPrice.toLocaleString("vi-VN");
+    subTotal.innerHTML = sumPrice.toLocaleString("vi-VN") +" đ";
+  }
+  // render tổng tiền trong checkout
+  if (Total !== null) {
+    Total.innerHTML = sumPrice.toLocaleString("vi-VN") +" đ";
   }
 }
 
@@ -471,15 +476,14 @@ function renderModalContentQuickView(id) {
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i> (1 customer review)
           </div>
-          <p class="price">$${(data.price * 1).toLocaleString("vi-VN")}</p>
+          <p class="price">${(data.price * 1).toLocaleString("vi-VN")} đ</p>
           <p class="des">
-                Tailored line. Wool mix fabric. Long design. Long buttoned sleeve. Lapel with notch. Back slit.
-                Two pockets with flaps on the front. Button up. Inner lining. Inner pocket. Back length 95.0
-                cm.<br>
-                Summer tops for women<br>
-                Cheetah kimonos ,beach cover ups<br>
-                Lightweight chiffon casual shirts<br>
-                Open front outwear,short sleeve blouse.<br>
+                Dòng phù hợp. Vải pha len. Thiết kế dài. Tay áo dài cài cúc. Ve áo có khía.Khe lưng. Hai túi có nắp ở phía trước. Nút lên. Lớp lót bên trong. Túi trong.
+                Chiều dài lưng 95.0 cm.<br>
+                Áo mùa hè cho phụ nữ<br>
+                Cheetah kimono, che bãi biển<br>
+                Áo sơ mi vải voan nhẹ<br>
+                Áo khoác ngoài hở phía trước, áo cánh ngắn tay.<br>
           </p>
           <div class="action d-flex align-items-center" data-id = ${data.id}>
                 <div class="control-item d-flex align-items-center">
