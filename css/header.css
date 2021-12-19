@@ -21,11 +21,6 @@ header .main-header.active {
   -webkit-animation: down 1s forwards;
   animation: down 1s forwards;
 }
-.wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
 
 .header__first {
   background-color: whitesmoke;

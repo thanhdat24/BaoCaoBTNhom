@@ -1,4 +1,7 @@
-// ------------------------------------------
+/*File: details.js
+@Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn
+@Created date:  15-12-2021, updated 18-12-2021*/
+// Lưu id vào localStorage với tên là "id-item"
 const id = localStorage.getItem("id-item");
 
 window.addEventListener("load", function (e) {
@@ -9,6 +12,7 @@ window.addEventListener("load", function (e) {
 
   renderNavTop(id);
 });
+
 
 function renderDetails(id) {
   let details__left = getELE("details__left");
@@ -94,6 +98,7 @@ clickDetails = (dataID, e) => {
   window.location.pathname = "/details.html";
 };
 
+
 function renderNavTop(id) {
   let nav_top = document.querySelector(".nav-top");
   const item = products.find((val) => val.id == id);
@@ -115,6 +120,5 @@ clickAddToCardDetails = (dataID, e) => {
   // thêm sản phẩm có id vào trong mảng
   addMiniCart(dataID);
   // render lại giỏ hàng
-
   renderMiniCart(miniCart);
 };

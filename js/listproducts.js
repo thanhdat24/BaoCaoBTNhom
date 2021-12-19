@@ -1,4 +1,10 @@
+/*File: listproducts.js
+@Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn
+@Created date:  11-12-2021, updated 18-12-2021*/
+
+// tạo ra file localStorage và đặt tên dataCart là mảng rông
 var miniCart = parseLocal("dataCart") || [];
+// tạo ra file localStorage và đặt tên WishListProduct là mảng rông
 var wishList = parseLocal("WishListProduct") || [];
 
 window.addEventListener("load", function () {
@@ -246,6 +252,7 @@ const blogs = [
 
 const bestSale = products.filter((item) => item.isBest);
 
+
 function renderProduct1(data) {
   let divProduct1 = getELE("products1");
   let productItem = "";
@@ -269,7 +276,7 @@ function renderProduct1(data) {
                               item.id
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
-                            <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
+                            <li class="compare action-disable"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
                              <li onclick="clickQuickView(${
                                item.id
                              },event)" class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
@@ -324,7 +331,7 @@ function renderProduct2(data) {
                               item.id
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
-                            <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
+                            <li class="compare action-disable"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
                              <li onclick="clickQuickView(${
                                item.id
                              },event)" class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>

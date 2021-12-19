@@ -1,6 +1,6 @@
-<!-- File: checkout.html
-@Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn
-@Created date: 15-12-2021, updated 17-12-2021 -->
+<!-- File: index.html
+@Author: Le Thanh Dat, Nguyen Tuan Canh, Ho Thi Minh Tuyen
+@Created date: 7-12-2021-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,26 +17,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ICON BS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- BS5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- ICON BS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- RESET CSS  -->
     <link rel="stylesheet" href="./css/reset.css">
-    <!-- CHECKOUT CSS -->
-    <link rel="stylesheet" href="./css/checkout.css">
+    <!-- LIST PRODUCT CSS -->
+    <link rel="stylesheet" href="./css/listProduct.css">
+    <!-- DETAILS -->
+    <link rel="stylesheet" href="./css/details.css">
     <!-- HEADER -->
     <link rel="stylesheet" href="./css/header.css">
     <!-- FOOTER -->
     <link rel="stylesheet" href="./css/footer.css">
-    <!-- TEMPLATE CSS-->
+    <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/template.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <!-- HEADER  -->
+        <!-- HEADER @Author: Nguyen Tuan Canh, canhb1906632@student.ctu.edu.vn -->
+        <!-- HEADER -->
         <header class="header">
             <div class="header__first">
                 <div class="top-bar">
@@ -106,12 +109,15 @@
                             <li class="item addWishlist"><a href="wishlist.html"><i class="bi bi-heart"></i></a><span
                                     class="before" id="before1">0</span>
                             </li>
+                            <li class="item card-item"> <a data-bs-toggle="modal" data-bs-target="#cardModal"><i
+                                        class="bi bi-handbag"></i></a><span class="before" id="before">0</span></li>
                             <li><a><i class="bi bi-search"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
+        <!-- MODAL @Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn -->
         <!-- Modal Card-->
         <div class="modal fade " id="cardModal" tabindex="-1" aria-labelledby="modalCard" aria-hidden="true">
             <div style="min-width: 800px;" class="modal-dialog">
@@ -184,83 +190,179 @@
             </div>
         </div>
         <!-- MAIN  -->
-        <main class="checkout">
-            <div class="checkout__description">
-                <a href="index.html">Home</a> <span>Checkout</span>
-            </div>
-            <div class="container">
-
-                <h3 class="checkout__heading">
-                    ĐẶT HÀNG
-                </h3>
-                <form action="" class="checkout__info d-flex  row">
-                    <div class="checkout__info-left  col-sm-12 col-md-12 col-lg-6 col-xl-7 ">
-                        <h3 class="checkout__info-title">Chi tiết đơn hàng</h3>
-                        <div class="checkout__info-content">
-                            <div class="checkout__info-label mt-3 d-flex align-items-center justify-content-between">
-                                <div class="input-group mb-3">
-                                    <label for="name" class="form-label ">Họ </label>
-                                    <input type="text" class="form-control me-4">
-                                </div>
-
-                                <div class="input-group mb-3 ">
-                                    <label for="name" class="form-label">Tên</label><br>
-                                    <input type="text" class="form-control">
-                                </div>
+        <main class="main">
+            <!-- COVER -->
+            <!-- CAROUSEL @Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn Nguyen Tuan Canh, canhb1906632@student.ctu.edu.vn-->
+            <section class="cover">
+                <!-- CAROUSEL SLIDER-->
+                <div id="carouselRubix" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators carousel-indicators--config">
+                        <button type="button" data-bs-target="#carouselRubix" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselRubix" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselRubix" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./img/slider/slider81.jpg" alt="banner1" class="img-fluid">
+                            <div class="main-text">
+                                <h1><a>Chuyển Phát Nhanh</a>, <span>Từ 1.000.000</span></h1>
+                                <h2>Mọi Người Đang Nói Về <br> Bộ Sưu Tập Thu Đông 2021</h2>
+                                <button class="btn btn-primary main-text__ss">Mua ngay!</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control">
-
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/slider/slider82.jpg" alt="banner1" class="img-fluid">
+                            <div class="main-text">
+                                <h1><a>Chuyển Phát Nhanh</a>, <span>Từ 1.000.000</span></h1>
+                                <h2>Giảm Giá Cho Người Đầu Tiên <br>
+                                    3 ngày 17-18-19/12/2021</h2>
+                                <button class="btn btn-primary main-text__ss">Mua ngay!</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Số điện thoại</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Địa chỉ</label>
-                                <input type="text" class="form-control" placeholder="Số nhà, tên đường, căn hộ, đơn vị">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/slider/slider83.jpg" alt="banner1" class="img-fluid">
+                            <div class="main-text">
+                                <h1><a>Chuyển Phát Nhanh</a>, <span>Từ 1.000.000</span></h1>
+                                <h2>Thời Trang Nữ Mùa Mới <br>
+                                    Giảm giá tới 70% ngay bây giờ!</h2>
+                                <button class="btn btn-primary main-text__ss">Mua ngay!</button>
                             </div>
                         </div>
                     </div>
-                    <div class="checkout__info-right  col-sm-12 col-md-12 col-lg-6 col-xl-5 ">
-                        <div class="checkout__order">
-                            <h3 class="checkout__order-heading">Đơn hàng của tôi</h3>
-                            <table class="table checkout__order-content">
-                                <thead>
-                                    <tr class="checkout__order-title ">
-                                        <th>SẢN PHẨM</th>
-                                        <th class="text-end">TỔNG CỘNG</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="ListCheckOut">
-                                    <!-- <tr class="checkout__order-title">
-                                        <td>TỔNG TIỀN</td>
-                                        <td class="text-end checkout__order-total">0.0$</td>
-                                    </tr> -->
-                                </tbody>
-                                <tfoot>
-                                    <tr class="checkout__total">
-                                        <td>Tổng tiền</td>
-                                        <td class="text-end" id="checkout__total-sub"></td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <div class="checkout__order-payment">
-                                <div class="checkout__payment">
-                                    <h6 style="font-weight:700;">Phương thức thanh toán:</h6>
-                                    <p>Thanh toán khi nhận hàng</p>
+                    <div class="carousel-button">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselRubix"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselRubix"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- TRENDING TOP @Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn -->
+            <!-- TRENDING TOP-->
+            <section class="trending trending-top">
+                <!-- BANNERS -->
+                <div class="container py-5">
+                    <div class="banners row">
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 wrapper-banner">
+                            <div class="banners-item">
+                                <img src="./img/banner/home8-banner-1.jpg" alt="banner1" class="banners-item__image">
+                                <div class="banners-item__content">
+                                    <h4 class="banners-item__title">
+                                        <a href="#">Mũ bucket trơn</a>
+                                    </h4>
+                                    <span class="banners-item__price">Từ 999.000</span>
                                 </div>
-                                <button href="#" class="checkout__button">
-                                    ĐẶT HÀNG
-                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 wrapper-banner">
+                            <div class="banners-item">
+                                <img src="./img/banner/home8-banner-2.jpg" alt="banner2" class="banners-item__image">
+                                <div class="banners-item__content">
+                                    <h4 class="banners-item__title">
+                                        <a href="#">Balo Da Bò</a>
+                                    </h4>
+                                    <span class="banners-item__price">Giá khởi đầu 1.000.000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-4 col-xl-4 wrapper-banner">
+                            <div class="banners-item">
+                                <img src="./img/banner/home8-banner-3.jpg" alt="banne3" class="banners-item__image">
+                                <div class="banners-item__content">
+                                    <h4 class="banners-item__title">
+                                        <a href="#">Giày cao cổ Umbro</a>
+                                    </h4>
+                                    <span class="banners-item__price">Giảm đến 70%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
+                    <!-- TRANDING PRODUCT -->
+                    <div class="trending-product">
+                        <div class="trending-product__title">
+                            <h3>Sản Phẩm Thịnh Thành</h3>
+                            <div>
+                                <p>Bán Chạy Nhất Trong Tuần Này</p>
+                            </div>
+                        </div>
+                        <div class="trending-product__list">
+                            <div class="listProduct row products1" id="products1">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- BANNER @Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn -->
+            <!-- BANNER -->
+            <section class="banner wrapper-banner">
+                <div class="container">
+                    <div class="banner__content">
+                        <div class="banner__top">
+                            Chuyển phát nhanh, <span>từ 1.000.000</span>
+                        </div>
+                        <h2 class="banner__heading">
+                            Final Fashion Sale <br>
+                            SS 21/22 Collections
+                        </h2>
+                        <p>Giá trong tuần này:</p>
+                        <p class="banner__markdown">
+                            Giảm giá tới 69% so với giá thông thường
+                        </p>
+                        <a href="#" class="btn btn-dark banner__button">Bộ Sưu Tập <i
+                                class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </section>
+            <!-- TRENDING BOTTOM @Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn -->
+            <!-- TRENDING BOTTOM -->
+            <section class="trending trending-bottom">
+                <div class="container py-5">
+                    <!-- TRANDING PRODUCT -->
+                    <div class="trending-product">
+                        <div class="trending-product__title">
+                            <h3>Sản Phẩm Bán Chạy Nhất</h3>
+                            <div>
+                                <p>Bán Chạy Nhất Trong Tuần Này</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trending-product__list">
+                        <div class="row listProduct" id="products2">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SUBSCRIBE @Author: Ho Thi Minh Tuyen, tuyenb1906358@student.ctu.edu.vn -->
+            <!-- SUBSCRIBE -->
+            <section class="subscribe">
+                <div class="box">
+                    <form>
+                        <h2>Đăng Ký Nhận Bản Tin Của Chúng Tôi</h2>
+                        <p>Hãy đón nhận bản tin hàng tuần và xây dựng các cửa hàng thương mại điện tử tốt hơn.</p>
+                        <input type="email" placeholder="Nhập địa chỉ email của bạn" required>
+                        <button type="submit">Đăng ký</button>
+                        <p class="text-secondary">Chúng tôi tôn trọng quyền riêng tư của bạn, vì vậy chúng tôi không bao
+                            giờ chia sẻ thông tin của bạn.</p>
+                    </form>
+                </div>
+            </section>
+            <!-- BLOG @Author: Ho Thi Minh Tuyen, tuyenb1906358@student.ctu.edu.vn -->
+            <!-- BLOG -->
+            <section class="blog"></section>
         </main>
-
+        <!-- FOOTER @Author: Ho Thi Minh Tuyen, tuyenb1906358@student.ctu.edu.vn -->
         <!-- FOOTER -->
         <footer class="footer">
             <div class="contaniner">
@@ -347,15 +449,16 @@
             </div>
         </footer>
     </div>
+
     <!-- BS5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-
-    <script src="./js/main.js"></script>
-    <script src="./js/listproducts.js"></script>
     <!-- MAIN JS -->
+    <script src="./js/main.js"></script>
+    <script src="./js/details.js"></script>
+    <script src="./js/listproducts.js"></script>
 </body>
 
 </html>

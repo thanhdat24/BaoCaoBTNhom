@@ -1,6 +1,4 @@
-<!-- File: checkout.html
-@Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn
-@Created date: 15-12-2021, updated 17-12-2021 -->
+<!-- REGISTER @Author: Ho Thi Minh Tuyen, tuyenb1906358@student.ctu.edu.vn -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,20 +15,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ICON BS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- BS5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- ICON BS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- RESET CSS  -->
     <link rel="stylesheet" href="./css/reset.css">
-    <!-- CHECKOUT CSS -->
-    <link rel="stylesheet" href="./css/checkout.css">
+    <!-- REGISTER -->
+    <link rel="stylesheet" href="./css/register.css">
     <!-- HEADER -->
     <link rel="stylesheet" href="./css/header.css">
     <!-- FOOTER -->
     <link rel="stylesheet" href="./css/footer.css">
-    <!-- TEMPLATE CSS-->
+    <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/template.css">
 </head>
 
@@ -106,6 +104,8 @@
                             <li class="item addWishlist"><a href="wishlist.html"><i class="bi bi-heart"></i></a><span
                                     class="before" id="before1">0</span>
                             </li>
+                            <li class="item card-item"> <a data-bs-toggle="modal" data-bs-target="#cardModal"><i
+                                        class="bi bi-handbag"></i></a><span class="before" id="before">0</span></li>
                             <li><a><i class="bi bi-search"></i></a></li>
                         </ul>
                     </div>
@@ -177,90 +177,205 @@
         </div>
         <!-- Modal Detail-->
         <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered " style="max-width: 900px">
-                <div class="modal-content modal-detail" id="modal-detail">
+            <main class="main">
+                <!-- REGISTER @Author: Ho Thi Minh Tuyen, tuyenb1906358@student.ctu.edu.vn -->
+                <section class="register">
+                    <div class="container">
+                        <h2>Đăng ký người dùng</h2>
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">Tên Đăng Nhập </label><br>
+                                    <input id="form1" type="text" placeholder="Nhập tên đăng nhập" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">Mật Khẩu</label><br>
+                                    <input id="form2" type="password" placeholder="Nhập mật khẩu" required>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Nhập Lại Mật Khẩu</label><br>
+                                    <input id="form" type="password" placeholder="Nhập lại mật khẩu" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">Giới Tính</label><br>
+                                    <input id="form3" type="text" placeholder="Nam" required><br>
+                                </div>
 
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">Tên Hiển Thị</label><br>
+                                    <input id="form4" type="text" placeholder="Nhập tên hiển thị" required><br>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">Email</label><br>
+                                    <input id="form5" type="email" placeholder="Nhập email" required><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Số Điện Thoại</label> <br>
+                                    <input id="form6" type="tel" placeholder="Nhập số điện thoại" required><br>
+                                </div>
+
+                            </div>
+                            <div class="row btn-form"><br>
+                                <button type="button" class="btn btn-dark ">Đăng Ký</button><br>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- SUBSCRIBE -->
+                <section class="subscribe"></section>
+                <!-- BLOG -->
+                <section class="blog"></section>
+            </main>
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="contaniner">
+                    <div class="row">
+                        <div class="col">
+                            <img src="./img/logo/logo-footer-rubix.png " alt="logo_x2">
+                            <section>
+                                <a class="btn-floating text-white" href="#!" role="button">
+                                    <i class="fab fa-facebook-f"></i></a>
+
+                                <a class="btn-floating m-1 text-white" href="#!" role="button">
+                                    <i class="fab fa-twitter"></i></a>
+
+                                <a class="btn-floating m-1 text-white" href="#!" role="button">
+                                    <i class="fab fa-youtube"></i></a>
+
+                                <a class="btn-floating m-1 text-white" href="#!" role="button">
+                                    <i class="fab fa-whatsapp"></i></a>
+                            </section>
+                        </div>
+                        <div class="col">
+                            <h4>Chăm sóc khách hàng</h4>
+                            <ul>
+                                <li><a href="#" class="text-secondary">Tài khoản của tôi</a></li>
+                                <li><a href="#" class="text-secondary">Theo dõi đơn hàng của tôi</a></li>
+                                <li><a href="#" class="text-secondary">FAOs</a></li>
+                                <li><a href="#" class="text-secondary">Phương thức thanh toán</a></li>
+                                <li><a href="#" class="text-secondary">Hướng dẫn vận chuyển</a></li>
+                                <li><a href="#" class="text-secondary">Hỗ trợ sản phẩm</a></li>
+                                <li><a href="#" class="text-secondary">Thẻ quà tặng</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <h4>Xem thêm về Rubix</h4>
+                            <div class="sci">
+                                <ul>
+                                    <li><a href="#" class="text-secondary">Giới thiệu Rubix</a></li>
+                                    <li><a href="#" class="text-secondary">Đảm bảo của chúng tooi</a></li>
+                                    <li><a href="#" class="text-secondary">Các điều khoản và điều kiện</a></li>
+                                    <li><a href="#" class="text-secondary">Danh sách yêu thích</a></li>
+                                    <li><a href="#" class="text-secondary">Chính sách hoàn trả</a></li>
+                                    <li><a href="#" class="text-secondary">Giao hàng và trả hàng</a></li>
+                                    <li><a href="#" class="text-secondary">Sơ đồ trang web</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h4 class="col-end">Liên Hệ</h4>
+                            <ul>
+                                <li><a href="#" class="text-secondary"><i class="fa fa-phone"
+                                            aria-hidden="true"></i>&ensp;
+                                        (+84) 123456789</a></li>
+                                <li><a href="#" class="text-secondary"><i class="fa fa-envelope-o"
+                                            aria-hidden="true"></i>nhom4_CT18810@ctu.edu.com</a></li>
+                            </ul>
+                            <h4 class="col-end mt-3">Địa chỉ</h4>
+                            <ul class="map">
+                                <li><a href="#" class="text-secondary"><i class="fa fa-map-marker"
+                                            aria-hidden="true"></i>&ensp;
+                                        Đường 3/2 <br>
+                                        Q.Ninh Kiều, TP.Cần Thơ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                            <a href="#" class="up-arrow">
+                                <i class="fa fa-chevron-up "></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="row my-3">
+                    <div class="col " style="display: flex; align-items: center">
+                        <p class="text-secondary mb-0">Copyright &copy;
+                            <a href="#" class="text-white">Rubix</a> all rights reserved.
+                        </p>
+
+                    </div>
+                    <div class="col" style="display: flex; align-items: center;justify-content: center;">
+                        <img src="./img/icon/payment.png" alt="payment">
+                    </div>
+                </div>
+            </footer>
         </div>
-        <!-- MAIN  -->
-        <main class="checkout">
-            <div class="checkout__description">
-                <a href="index.html">Home</a> <span>Checkout</span>
-            </div>
-            <div class="container">
-
-                <h3 class="checkout__heading">
-                    ĐẶT HÀNG
-                </h3>
-                <form action="" class="checkout__info d-flex  row">
-                    <div class="checkout__info-left  col-sm-12 col-md-12 col-lg-6 col-xl-7 ">
-                        <h3 class="checkout__info-title">Chi tiết đơn hàng</h3>
-                        <div class="checkout__info-content">
-                            <div class="checkout__info-label mt-3 d-flex align-items-center justify-content-between">
-                                <div class="input-group mb-3">
-                                    <label for="name" class="form-label ">Họ </label>
-                                    <input type="text" class="form-control me-4">
-                                </div>
-
-                                <div class="input-group mb-3 ">
-                                    <label for="name" class="form-label">Tên</label><br>
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control">
-
-                            </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Số điện thoại</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Địa chỉ</label>
-                                <input type="text" class="form-control" placeholder="Số nhà, tên đường, căn hộ, đơn vị">
+        <main class="main">
+            <section class="register">
+                <div class="container">
+                    <h2>Đăng ký người dùng</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Tên Đăng Nhập </label><br>
+                                <input id="form1" type="text" placeholder="Nhập tên đăng nhập" required>
                             </div>
                         </div>
-                    </div>
-                    <div class="checkout__info-right  col-sm-12 col-md-12 col-lg-6 col-xl-5 ">
-                        <div class="checkout__order">
-                            <h3 class="checkout__order-heading">Đơn hàng của tôi</h3>
-                            <table class="table checkout__order-content">
-                                <thead>
-                                    <tr class="checkout__order-title ">
-                                        <th>SẢN PHẨM</th>
-                                        <th class="text-end">TỔNG CỘNG</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="ListCheckOut">
-                                    <!-- <tr class="checkout__order-title">
-                                        <td>TỔNG TIỀN</td>
-                                        <td class="text-end checkout__order-total">0.0$</td>
-                                    </tr> -->
-                                </tbody>
-                                <tfoot>
-                                    <tr class="checkout__total">
-                                        <td>Tổng tiền</td>
-                                        <td class="text-end" id="checkout__total-sub"></td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <div class="checkout__order-payment">
-                                <div class="checkout__payment">
-                                    <h6 style="font-weight:700;">Phương thức thanh toán:</h6>
-                                    <p>Thanh toán khi nhận hàng</p>
-                                </div>
-                                <button href="#" class="checkout__button">
-                                    ĐẶT HÀNG
-                                </button>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Mật Khẩu</label><br>
+                                <input id="form2" type="password" placeholder="Nhập mật khẩu" required>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Nhập Lại Mật Khẩu</label><br>
+                                <input id="form" type="password" placeholder="Nhập lại mật khẩu" required>
                             </div>
                         </div>
-                    </div>
-                </form>
-            </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Giới Tính</label><br>
+                                <input id="form3" type="text" placeholder="Nam" required><br>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Tên Hiển Thị</label><br>
+                                <input id="form4" type="text" placeholder="Nhập tên hiển thị" required><br>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Email</label><br>
+                                <input id="form5" type="email" placeholder="Nhập email" required><br>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Số Điện Thoại</label> <br>
+                                <input id="form6" type="tel" placeholder="Nhập số điện thoại" required><br>
+                            </div>
+
+                        </div>
+                        <div class="row btn-form"><br>
+                            <button type="button" class="btn btn-dark ">Đăng Ký</button><br>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </main>
-
         <!-- FOOTER -->
         <footer class="footer">
             <div class="contaniner">
@@ -346,16 +461,15 @@
                 </div>
             </div>
         </footer>
-    </div>
-    <!-- BS5 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        <!-- BS5 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
-
-    <script src="./js/main.js"></script>
-    <script src="./js/listproducts.js"></script>
-    <!-- MAIN JS -->
+        <!-- MAIN JS -->
+        <script src="./js/main.js"></script>
+        <script src="./js/details.js"></script>
+        <script src="./js/listproducts.js"></script>
 </body>
 
 </html>

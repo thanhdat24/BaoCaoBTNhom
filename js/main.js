@@ -1,3 +1,7 @@
+/*File: main.js
+@Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn
+@Created date:  10-12-2021, updated 18-12-2021*/
+
 window.addEventListener("load", function (e) {
   e.preventDefault();
 
@@ -30,7 +34,7 @@ window.addEventListener("load", function (e) {
                               item.id
                             },event)" class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                             </li>
-                            <li class="compare"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
+                            <li class="compare action-disable"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
                             <li onclick="clickQuickView(${
                               item.id
                             },event)" class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye" ></i><span>View Details</span></li>
@@ -62,14 +66,15 @@ window.addEventListener("load", function (e) {
   }
 
   // filter sort
+  // Giảm dần
   const sortLow = getELE("low");
-
   if (sortLow !== null) {
     sortLow.addEventListener("click", function () {
       const data = products.sort((a, b) => +a.price - +b.price);
       renderProductCate(data.reverse());
     });
   }
+  // Tăng dần
   const sortHight = getELE("high");
   if (sortHight !== null) {
     sortHight.addEventListener("click", function () {
@@ -113,11 +118,11 @@ function parseLocal(name) {
 }
 
 //======Render miniCart=========
-// Hàm dùng để show ra sản phẩm trong giỏ hàng
 window.addEventListener("load", function (e) {
   renderMiniCart(miniCart);
 });
 
+// show ra sản phẩm trong giỏ hàng
 function renderMiniCart(data) {
   let mini_cart_Desktop = getELE("mini-cart-product1");
   let mini_cart_Mobile = getELE("mini-cart-product2");
@@ -158,31 +163,35 @@ function renderMiniCart(data) {
            })"><i class="bi bi-trash-fill"></i></button>
       </li>
         `;
+    
     sumPrice += item.quantity * item.price;
     sumQuantity += item.quantity;
   }
 
-  // render item content
+  // render item content dạng desktop
   if (mini_cart_Desktop !== null) {
     mini_cart_Desktop.innerHTML = content1;
   }
+  // render item content dạng mobile
   if (mini_cart_Mobile !== null) {
     mini_cart_Mobile.innerHTML = content2;
   }
 
-  // render tổng tiền trong miniCart
+  // render tổng tiền trong miniCart dạng desktop
   if (subTotalDesktop !== null) {
     subTotalDesktop.innerHTML = sumPrice.toLocaleString("vi-VN");
   }
+  // render tổng tiền trong miniCart dạng mobile
   if (subTotalMobile !== null) {
     subTotalMobile.innerHTML = sumPrice.toLocaleString("vi-VN");
   }
+
   // render tổng số lượng  sản phẩm
   if (amount !== null) {
     amount.innerHTML = sumQuantity;
   }
 }
-
+// thêm sản phẩm vào giỏ hàng
 function addMiniCart(id) {
   // duyệt giỏ hàng và kiểm tra id trong giỏ hàng có bằng với id người dùng click không
   let index = miniCart.findIndex((spGioHang) => spGioHang.id === id);
@@ -225,6 +234,7 @@ clickAddToCard = (dataID, e) => {
   renderMiniCart(miniCart);
 };
 
+// xoá sản phẩm khỏi giỏ hàng
 removeItemMiniCart = (id) => {
   const newMiniCart = [...miniCart];
   // Tìm các phần tử có trong giỏ hàng
@@ -248,6 +258,7 @@ window.addEventListener("load", function () {
   renderWishList(wishList);
 });
 
+// show ra sản phẩm yêu thích
 function renderWishList(data) {
   let wish_list = getELE("add-to-wish");
   let amount = getELE("before1");
@@ -290,6 +301,7 @@ function renderWishList(data) {
     wish_list.innerHTML = content;
   }
 }
+// thêm sản phẩm yêu thích
 function addWishList(id) {
   // duyệt giỏ hàng và kiểm tra id trong giỏ hàng có bằng với id người dùng click không
   let index = wishList.findIndex((spWishList) => spWishList.id === id);
@@ -330,6 +342,7 @@ clickAddWishList = (dataID, e) => {
   renderWishList(wishList);
 };
 
+// Xoá sản phẩm yêu thích
 removeItemWishLish = (id) => {
   const newWishList = [...wishList];
   // Tìm các phần tử có trong giỏ hàng
@@ -362,9 +375,8 @@ clickAddToCardWishList = (dataID, e) => {
   // thêm sản phẩm có id vào trong mảng
   addMiniCart(dataID);
   // render lại giỏ hàng
-
   renderMiniCart(miniCart);
-
+  // xoá sản phẩm yêu thích
   removeItemWishLish(dataID);
 };
 
@@ -429,11 +441,6 @@ function renderModalDetail(id) {
 }
 
 //======Render Quick View=========
-// Hàm dùng để show ra sản phẩm trong giỏ hàng
-window.addEventListener("load", function (e) {
-  // renderQuickView(miniCart);
-});
-
 function renderModalQuickView(id) {
   let quick_view = getELE("quickview");
   let content = "";
@@ -502,9 +509,9 @@ clickQuickView = (dataID, e) => {
     child.dataset.id === dataID;
   });
   renderModalDetail(dataID);
-  // render lại giỏ hàng
+  // render ảnh model quick view
   renderModalQuickView(dataID);
-
+  // render content model quick view
   renderModalContentQuickView(dataID);
 };
 

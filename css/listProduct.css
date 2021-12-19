@@ -1,3 +1,7 @@
+/* File: listProduct.css
+@Author: Le Thanh Dat, datb1910205@student.ctu.edu.vn
+@Created date: 6-12-2021, updated 18-12-2021  */
+
 /* listproduct */
 .listProduct .item .product {
   margin-top: 20px;
@@ -120,6 +124,12 @@
 }
 .action1 li {
   transform: translateX(60px);
+}
+.item .action .action-disable:hover {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+  cursor: default;
 }
 .item .product:hover .action1 li {
   transform: translateX(-1px);

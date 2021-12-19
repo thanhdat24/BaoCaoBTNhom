@@ -1,0 +1,56 @@
+/* register.css @Author: Ho Thi Minh Tuyen, tuyenb1906358@student.ctu.edu.vn */
+.register {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}  
+.register .container {
+    max-width: 800px;
+    margin: 20px auto;;
+    padding-top: 20px;
+}
+.register .container  h2 {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.register .container .row col label {
+    font-size: 20px;
+    margin-bottom: 0px;
+    position: relative;
+}
+.register .container .row input {
+    border: 1px solid rgb(212, 212, 212);
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-radius: 5px;
+    
+}
+.register .container .row input:hover {
+    background-color: rgb(240, 241, 241);
+}
+
+.register .container .row {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.register .container .row .col input {
+    width: 100%;  
+}
+.register .container .row .col.error input {
+    border: 2px solid rgb(138, 64, 64);
+}
+.register .container .row button:hover {
+    background: rgb(49, 49, 95);
+}
+.container.complete {
+    background: thistle;
+}
+/*/////////////////////////////////////////////*/
