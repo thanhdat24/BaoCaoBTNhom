@@ -37,6 +37,7 @@
   width: 100%;
   border: 1px solid #cccccc;
   outline: none;
+  border-radius: 5px;
 }
 
 .btn-first {
@@ -51,6 +52,7 @@
   cursor: pointer;
   transition: all 0.2s;
   margin-top: 15px;
+  border-radius: 5px;
 }
 .btn-first:hover {
   background: #ba933e;
