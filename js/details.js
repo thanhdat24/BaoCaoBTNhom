@@ -13,7 +13,6 @@ window.addEventListener("load", function (e) {
   renderNavTop(id);
 });
 
-
 function renderDetails(id) {
   let details__left = getELE("details__left");
   let content = "";
@@ -95,9 +94,8 @@ clickDetails = (dataID, e) => {
   renderDetails(dataID);
   renderContentDetails(dataID);
 
-  window.location.pathname = "/details.html";
+  window.location.href = "details.html";
 };
-
 
 function renderNavTop(id) {
   let nav_top = document.querySelector(".nav-top");
