@@ -104,7 +104,7 @@ function renderNavTop(id) {
   const item = products.find((val) => val.id == id);
   let content = "";
   content = `
-    <li><a href="template.html">Home <span>/</span></a></li>
+    <li><a href="index.html">Home <span>/</span></a></li>
     <li><a href="products.html">Shop <span>/</span></a></li>
     <li><a href="products.html">Fashion <span>/</span></a></li>
     <li><a href="products.html">${item.type}<span>/</span></a></li>

@@ -7,8 +7,15 @@
 - Ho Thi Minh Tuyen - B1906358
 
  ## UI
-<img width="2828" alt="Desktop" src="https://user-images.githubusercontent.com/54407533/146664283-7ea86d32-a8ea-4948-a9ec-6c962c9bb070.png">
+  - Rubix:
+
+![logo-footer-rubix](https://user-images.githubusercontent.com/54407533/146664526-7303bda2-6f83-4c62-927b-7606e18d62fa.png)
+
+
+![template](https://user-images.githubusercontent.com/54407533/146664432-32a07770-3a1e-444b-bf98-fcfecb3e0a7c.png)
 
 - Responsive:
-<img width="2828" alt="Mobile" src="https://user-images.githubusercontent.com/54407533/146664302-6d9f4351-a197-4f0b-89d7-37358a231ab0.png">
+
+![desktop](https://user-images.githubusercontent.com/54407533/146664507-57c22f99-4042-4fa3-9aa5-df4419caad3b.png)
+
 
