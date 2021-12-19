@@ -9,9 +9,13 @@
  ## UI
   - Rubix:
 
+![logo-footer-rubix](https://user-images.githubusercontent.com/54407533/146664526-7303bda2-6f83-4c62-927b-7606e18d62fa.png)
+
+
 ![template](https://user-images.githubusercontent.com/54407533/146664432-32a07770-3a1e-444b-bf98-fcfecb3e0a7c.png)
 
 - Responsive:
 
-![desktop](https://user-images.githubusercontent.com/54407533/146664435-ccb0ba1c-9aed-42b8-bd54-439d11be9b42.png)
+![desktop](https://user-images.githubusercontent.com/54407533/146664507-57c22f99-4042-4fa3-9aa5-df4419caad3b.png)
+
 
