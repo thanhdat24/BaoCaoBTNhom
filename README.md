@@ -4,7 +4,7 @@
 
 ![logo_CTU](https://user-images.githubusercontent.com/54407533/148365949-24fada7b-2229-46cc-b604-beb5a8db3bcd.png)
 
-- Le Thanh Dat - B1910205
+- Le Thanh Dat - B1910205 (Leader)
 - Nguyen Tuan Canh - B1906632
 - Ho Thi Minh Tuyen - B1906358
 
